@@ -39,7 +39,7 @@ export default function ContactInfo() {
     {
       title: "CONTACT US",
       icon: Phone,
-      content: "+91 90511864578"
+      content: "+91 90511864XX"
     },
     {
       title: "LOCATION",
