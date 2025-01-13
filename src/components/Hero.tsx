@@ -144,7 +144,7 @@ const Hero = () => {
                 className="transform text-white text-sm transition-all duration-300
                   group-hover:opacity-0 flex items-center justify-center gap-3"
               >
-                Resume   <Icon icon="material-symbols:download" width="20" />
+                Resume <Icon icon="material-symbols:download" width="20" />
               </span>
               <span
                 className="absolute inset-0 flex items-center justify-center
@@ -435,7 +435,7 @@ const Hero = () => {
             ))}
           </div>
         </motion.div>
-
+        {/* work together */}
         <motion.div
           className="bg-neutral-900 rounded-2xl p-4 sm:p-6  border border-black ring-2 ring-neutral-700"
           variants={cardVariants}

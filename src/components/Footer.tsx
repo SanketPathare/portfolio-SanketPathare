@@ -1,6 +1,6 @@
-import React from 'react';
-import { Twitter, Dribbble } from 'lucide-react';
-import Link from 'next/link';
+import React from "react";
+import { Twitter, Dribbble } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -8,11 +8,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <Link href="/" className="text-2xl font-bold text-white hover:text-neutral-300 transition-colors">
+            <Link
+              href="/"
+              className="text-2xl font-bold text-white hover:text-neutral-300 transition-colors"
+            >
               SP
             </Link>
           </div>
-
           <div className="text-center text-neutral-400 text-base">
             {new Date().getFullYear()} © All rights reserved.
           </div>
@@ -39,10 +41,11 @@ const Footer = () => {
 
 export default Footer;
 
-
- {/* <div className="flex space-x-8 mb-6 md:mb-0">
+{
+  /* <div className="flex space-x-8 mb-6 md:mb-0">
             <Link href="/" className="hover:text-blue-500 transition">Home</Link>
             <Link href="/about" className="hover:text-blue-500 transition">About</Link>
             <Link href="/works" className="hover:text-blue-500 transition">Works</Link>
             <Link href="/contact" className="hover:text-blue-500 transition">Contact</Link>
-          </div>  */}
+          </div>  */
+}

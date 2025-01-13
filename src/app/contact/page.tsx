@@ -39,15 +39,15 @@ export default function Contact() {
   };
 
   return (
+    <>  
+      <Navbar />
     <motion.main
       initial="initial"
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="min-h-scree text-white"
+      className="min-h-screen text-white"
     >
-      <Navbar />
-
       <motion.div
         variants={containerVariants}
         className="pt-20 px-4 max-w-7xl mx-auto"
@@ -81,7 +81,8 @@ export default function Contact() {
         </div>
       </motion.div>
 
-      <Footer />
     </motion.main>
+      <Footer />
+    </>
   );
 }
