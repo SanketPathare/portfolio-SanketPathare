@@ -52,7 +52,7 @@ export default function Contact() {
         variants={containerVariants}
         className="pt-20 px-4 max-w-7xl mx-auto"
       >
-        <div className="grid md:grid-cols-2 gap-12 py-12 md:ml-8 md:mr-8 sm:px-4 px-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-12 md:ml-8 md:mr-8 sm:px-4 px-1">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}

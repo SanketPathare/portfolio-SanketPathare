@@ -66,7 +66,7 @@ export default function ContactInfo() {
         {contactItems.map((item, index) => (
           <motion.div key={item.title} variants={itemVariants}>
             <div className=" p-4 rounded-2xl  bg-neutral-800">
-              <h4 className="text-gray-400 mb-2">{item.title}</h4>
+              <h4 className="text-gray-400 mb-2 text-sm sm:text-md">{item.title}</h4>
               <div className="flex items-center space-x-4 group">
                 <motion.div
                   variants={iconVariants}
@@ -80,7 +80,7 @@ export default function ContactInfo() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * (index + 1) }}
                 >
-                  <p className="text-gray-500 hover:text-white ">
+                  <p className="text-gray-500 hover:text-white text-[12px] sm:text-sm">
                     {item.content}
                   </p>
                 </motion.div>
