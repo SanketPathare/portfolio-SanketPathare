@@ -167,8 +167,8 @@ const page = () => {
                       responsive designs. I'm particularly interested in
                       creating innovative solutions that solve real-world
                       problems. My approach combines technical expertise with
-                      creative problem-solving, ensuring that each project{" "}
-                      <br /> not only functions flawlessly but also provides an
+                      creative problem-solving, ensuring that each project
+                      <br className="hidden sm:block" /> not only functions flawlessly but also provides an
                       exceptional user experience.
                     </h3>
                   </div>
