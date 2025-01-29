@@ -132,14 +132,14 @@ const page = () => {
     <>
       <Navbar />
       <motion.main
-        className="min-h-screen pt-16 sm:pt-24 pb-8 sm:pb-12 mx-4 sm:mx-8"
+        className="min-h-screen pt-16 sm:pt-24 pb-8 sm:pb-12 mx-4 sm:mx-8 "
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <div className="container mx-auto px-2 sm:px-4">
+        <div className="container mx-auto px-2 sm:px-4 ">
           <motion.h1
-            className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12"
+            className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 mt-4"
             variants={itemVariants}
           >
             SELF-SUMMARY
