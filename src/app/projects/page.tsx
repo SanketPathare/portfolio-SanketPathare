@@ -9,34 +9,55 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
+    title: "Anime Review",
+    category: "WEBSITE",
+    image: image.AnimeReview,
+    slug: "AnimeReview",
+  },
+  {
+    id: 2,
+    title: "Movies Review",
+    category: "WEBSITE",
+    image: image.MoviesReview,
+    slug: "MoviesReview",
+  },
+  {
+    id: 3,
+    title: "Fit Club",
+    category: "WEBSITE",
+    image: image.Fitclub,
+    slug: "FitClub",
+  },
+  {
+    id: 4,
     title: "Tripfly",
     category: "WEBSITE",
     image: image.TripImg,
     slug: "tripfly",
   },
   {
-    id: 2,
+    id: 5,
     title: "Gemini AI",
     category: "WEBSITE",
     image: image.GeminiImg,
     slug: "gemini",
   },
   {
-    id: 3,
+    id: 6,
     title: "Crypto App",
     category: "WEBSITE",
     image: image.CryptoAppImg,
     slug: "crypto",
   },
   {
-    id: 4,
+    id: 7,
     title: "ElectroMart",
     category: "WEBSITE",
     image: image.ElectromartImg,
     slug: "ElectroMart",
   },
   {
-    id: 5,
+    id: 8,
     title: "Image Generator",
     category: "WEBSITE",
     image: image.imageGeneratorImg,
@@ -94,7 +115,10 @@ export default function Projects() {
               <motion.h1 variants={cardVariants} className="text-4xl font-bold">
                 ALL PROJECTS
               </motion.h1>
-              <motion.div variants={cardVariants} className="flex gap-2 hidden sm:block">
+              <motion.div
+                variants={cardVariants}
+                className="flex gap-2 hidden sm:block"
+              >
                 <span className="text-neutral-400 ">LATEST WORK AND</span>
                 <span className="text-white ml-1">FEATURED</span>
               </motion.div>

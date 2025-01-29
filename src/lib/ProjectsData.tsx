@@ -5,7 +5,8 @@ export interface ProjectType {
   title: string;
   category: string;
   description: string;
-  link: string;
+  GithubLink: string;
+  LiveLink: any;
   duration: string;
   technologies: string[];
   image: StaticImageData;
@@ -17,7 +18,8 @@ export const projects: { [key: string]: ProjectType } = {
     category: "WEB DESIGNING",
     description:
       "Tripfly is a travel booking website that allows users to book hotels, and car rentals. It was built using ReactJS and CSS.",
-    link: "https://github.com/SanketPathare/-Tripfly.in",
+    GithubLink: "https://github.com/SanketPathare/-Tripfly.in",
+    LiveLink: "https://tripfly-in.vercel.app/",
     duration: "2 week",
     technologies: ["React", "CSS"],
     image: image.TripImg,
@@ -27,7 +29,8 @@ export const projects: { [key: string]: ProjectType } = {
     category: "WEB DESIGNING",
     description:
       "Gemini AI is an AI chatbot that provides accurate and helpful information on a wide range of topics. It uses a massive knowledge base and natural language processing to understand and respond to user queries. It was built using ReactJS and CSS.",
-    link: "https://github.com/SanketPathare/gemini-clone",
+    GithubLink: "https://github.com/SanketPathare/gemini-clone",
+    LiveLink: "https://gemini-clone-ivory.vercel.app/",
     duration: "1 week",
     technologies: ["React", "CSS"],
     image: image.GeminiImg,
@@ -37,7 +40,8 @@ export const projects: { [key: string]: ProjectType } = {
     category: "WEB DESIGNING",
     description:
       "Cryptocurrency Tracker is a web application that allows users to track the current price of cryptocurrencies. It uses the CoinGecko API to fetch the latest prices and displays them in a user-friendly interface. It was built using ReactJS and CSS.",
-    link: "https://github.com/SanketPathare/CryptoApp",
+    GithubLink: "https://github.com/SanketPathare/CryptoApp",
+    LiveLink: "https://crypto-app-iota-flame.vercel.app/",
     duration: "1 week",
     technologies: ["React", "CSS"],
     image: image.CryptoAppImg,
@@ -47,9 +51,10 @@ export const projects: { [key: string]: ProjectType } = {
     category: "WEB DESIGNING",
     description:
       "ElectroMart is an e-commerce website that sells various electronic products. It was built using ReactJS and CSS.",
-    link: "https://github.com/SanketPathare/E-Commerce",
+    GithubLink: "https://github.com/SanketPathare/E-Commerce",
+    LiveLink: "https://e-commerce-gilt-pi.vercel.app/",
     duration: "1 week",
-    technologies: ["ReactsJs", "Tailwind CSS"],
+    technologies: ["React", "Tailwind CSS"],
     image: image.ElectromartImg,
   },
   ImageGenerator: {
@@ -57,15 +62,49 @@ export const projects: { [key: string]: ProjectType } = {
     category: "WEB DESIGNING",
     description:
       "Image Generator is a web application that allows users to generate different types of images based on their preferences. It uses the Canvas API to create the images and offers various options for customization. It was built using ReactJS and CSS.",
-    link: "https://github.com/SanketPathare/ai-img",
+    GithubLink: "https://github.com/SanketPathare/ai-img",
+    LiveLink: "https://ai-img-tan.vercel.app/",
     duration: "2 week",
     technologies: ["React", "CSS"],
     image: image.imageGeneratorImg,
+  },
+  AnimeReview: {
+    title: "Anime Review ",
+    category: "WEB DESIGNING",
+    description:
+      "Anime Review App is a web application that allows users to search for anime titles and read reviews from various sources. It uses the JIKAN API and displays the results in a user-friendly interface. It was built using NextJS and Tailwind CSS.",
+    GithubLink: "https://github.com/SanketPathare/animereviews",
+    LiveLink: "https://animereviews-bay.vercel.app/",
+    duration: "1 week",
+    technologies: ["TS", "Next", "Tailwind css", " JIKAN API"],
+    image: image.AnimeReview,
+  },
+  MoviesReview: {
+    title: "Movies Review ",
+    category: "WEB DESIGNING",
+    description:
+      "Movies Review App is a web application that allows users to search for movie titles and read reviews from various sources. It uses the TMDB API and displays the results in a user-friendly interface. It was built using NextJS and Tailwind CSS.",
+    GithubLink: "https://github.com/SanketPathare/moviesreviews",
+    LiveLink: "https://moviesreviews-eight.vercel.app/",
+    duration: "1 week",
+    technologies: ["JS", "Next", "Tailwind css", "TMDB API"],
+    image: image.MoviesReview,
+  },
+  FitClub: {
+    title: "FitClub",
+    category: "WEB DESIGNING",
+    description:
+      "FitClub is a fitness and wellness platform that allows users to create and join workout groups, track their progress, and receive personalized recommendations. It was built using ReactJS and CSS.",
+    GithubLink: "https://github.com/SanketPathare/fitclub",
+    LiveLink: "https://fitclub-plum.vercel.app/",
+    duration: "1 week",
+    technologies: ["TS", "Next", "Tailwind css"],
+    image: image.Fitclub,
   },
 };
 
 export async function getProjectData(
   slug: string
 ): Promise<ProjectType | undefined> {
-  return   projects[slug];
+  return projects[slug];
 }

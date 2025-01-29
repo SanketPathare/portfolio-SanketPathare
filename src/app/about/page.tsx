@@ -1,11 +1,16 @@
 "use client";
 
-import { Calendar, Book, Award, Users } from "lucide-react";
+import {
+  Code,
+  Palette,
+  Server,
+  Cloud,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const About = () => {
+const page = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -41,31 +46,86 @@ const About = () => {
   const ServiceCard: React.FC<{
     Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     title: string;
-  }> = ({ Icon, title }) => (
+    description: string;
+  }> = ({ Icon, title, description }) => (
     <motion.div
-      className="p-3 sm:p-4 bg-neutral-800 rounded-xl"
+      className="p-4 sm:p-5 bg-neutral-800 rounded-xl"
       variants={itemVariants}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500/10 rounded-full flex items-center justify-center mb-2 sm:mb-3">
-        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+        <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
       </div>
-      <h3 className="text-sm sm:text-base font-semibold">{title}</h3>
+      <h3 className="text-sm sm:text-base font-semibold mb-2">{title}</h3>
+      <p className="text-xs sm:text-sm text-neutral-400">{description}</p>
     </motion.div>
   );
 
   const services = [
-    { Icon: Calendar, title: "Web Design" },
-    { Icon: Book, title: "Development" },
-    { Icon: Award, title: "Branding" },
-    { Icon: Users, title: "Consultation" },
+    {
+      Icon: Code,
+      title: "Web Development",
+      description:
+        "Full-stack web applications using modern frameworks and best practices",
+    },
+    {
+      Icon: Palette,
+      title: "UI/UX Design",
+      description:
+        "Intuitive and responsive designs focused on user experience",
+    },
+    {
+      Icon: Server,
+      title: "Backend Development",
+      description: "Scalable server solutions and API development",
+    },
+    {
+      Icon: Cloud,
+      title: "Cloud Solutions",
+      description: "Cloud deployment and infrastructure management",
+    },
   ];
 
-  const skills = [
-    { name: "Web Development", percentage: 90 },
-    { name: "UI/UX Design", percentage: 85 },
-    { name: "Mobile Development", percentage: 75 },
+  const technicalSkills = [
+    {
+      name: "Frontend Development",
+      percentage: 90,
+      tools: "React, Next.js, TypeScript, Tailwind CSS",
+    },
+    {
+      name: "Backend Development",
+      percentage: 85,
+      tools: "Node.js, Express, MongoDB, PostgreSQL",
+    },
+    {
+      name: "UI/UX Design",
+      percentage: 80,
+      tools: "Figma, Adobe XD, Material-UI",
+    },
+    { name: "Mobile Development", percentage: 70, tools: "React Native, Expo" },
+  ];
+
+  const softSkills = [
+    "Problem Solving",
+    "Team Collaboration",
+    "Project Management",
+    "Communication",
+    "Time Management",
+    "Adaptability",
+  ];
+
+  const certifications = [
+    {
+      name: "AWS Certified Developer",
+      issuer: "Amazon Web Services",
+      year: "2023",
+    },
+    {
+      name: "Professional Scrum Master I",
+      issuer: "Scrum.org",
+      year: "2023",
+    },
   ];
 
   return (
@@ -87,7 +147,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12">
             <div className="space-y-6 sm:space-y-8">
-              {/* know me */}
+              {/* page Me */}
               <motion.div
                 className="bg-neutral-900 p-4 sm:p-6 rounded-2xl border border-black ring-2 ring-neutral-700"
                 variants={itemVariants}
@@ -97,77 +157,90 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 sm:space-y-6">
                   <div>
-                    <h3 className="text-sm  -tracking-tight text-neutral-400">
-                      Hi, my name is Sanket Pathare and I am from pune, India.
-                      Im a Full stack web developer and a last year college
-                      student pursuing BTech in CSE. I have done an internship
-                      as a Web developer at Divinify. I love to create original
-                      projects with beautiful designs, you can check out some of
-                      my work in the projects section.
+                    <h3 className="text-sm leading-relaxed text-neutral-400">
+                      Hi, I'm Sanket Pathare, a passionate full-stack developer
+                      based in Pune, India. Currently pursuing my BTech in
+                      Computer Science Engineering, I combine academic
+                      excellence with practical experience in web development.
+                      During my internship at Divinify, I specialized in
+                      building scalable web applications and implementing
+                      responsive designs. I'm particularly interested in
+                      creating innovative solutions that solve real-world
+                      problems. My approach combines technical expertise with
+                      creative problem-solving, ensuring that each project{" "}
+                      <br /> not only functions flawlessly but also provides an
+                      exceptional user experience.
                     </h3>
                   </div>
                 </div>
               </motion.div>
-
               {/* Experience */}
-              <motion.div
-                className="bg-neutral-900 p-4 sm:p-6 rounded-2xl  border border-black ring-2 ring-neutral-700"
-                variants={itemVariants}
-              >
-                <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-                  Experience
-                </h2>
-                <div className="space-y-4 sm:space-y-6">
-                  <motion.div variants={itemVariants}>
-                    <div className="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-neutral-400">
-                      <span className="mb-1 sm:mb-0">2021 - 2022</span>
-                      <span>ReactJs & NextJs</span>
-                    </div>
-                    <h3 className="font-semibold mt-1">Front-End Developer</h3>
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
-                    <div className="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-neutral-400">
-                      <span className="mb-1 sm:mb-0">2023 - Onward</span>
-                      <span>JavaScript & NodeJS </span>
-                    </div>
-                    <h3 className="font-semibold mt-1">Back-End Developer</h3>
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              {/* Education */}
               <motion.div
                 className="bg-neutral-900 p-4 sm:p-6 rounded-2xl border border-black ring-2 ring-neutral-700"
                 variants={itemVariants}
               >
                 <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-                  Education
+                  Professional Experience
                 </h2>
                 <div className="space-y-4 sm:space-y-6">
                   <motion.div variants={itemVariants}>
                     <div className="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-neutral-400">
-                      <span className="mb-1 sm:mb-0">2019 - 2022</span>
-                      <span>JSPM&apos;s College, Hadapsar</span>
+                      <span className="mb-1 sm:mb-0">2023 - Present</span>
+                      <span>Full Stack Development</span>
                     </div>
-                    <h3 className="font-semibold mt-1 text-sm">
-                      Diploma In Information Technology
+                    <h3 className="font-semibold mt-1">
+                      Senior Developer at Divinify
                     </h3>
+                    <p className="text-sm text-neutral-400 mt-2">
+                      • Led development of multiple client projects using React
+                      and Node.js <br />
+                      • Implemented CI/CD pipelines and improved deployment
+                      processes <br />
+                      • Mentored junior developers and conducted code reviews
+                      <br />
+                    </p>
                   </motion.div>
                   <motion.div variants={itemVariants}>
                     <div className="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-neutral-400">
-                      <span className="mb-1 sm:mb-0">2022 - Onward</span>
-                      <span>G.H.Raisoni University, Wagholi</span>
+                      <span className="mb-1 sm:mb-0">2021 - 2023</span>
+                      <span>Frontend Development</span>
                     </div>
-                    <h3 className="font-semibold mt-1 text-sm">
-                      Bachelor Degree in CSE
-                    </h3>
+                    <h3 className="font-semibold mt-1">Frontend Developer</h3>
+                    <p className="text-sm text-neutral-400 mt-2">
+                      • Developed responsive web applications using React and
+                      Next.js <br />
+                      • Collaborated with UI/UX designers to implement
+                      pixel-perfect designs
+                      <br />
+                      • Optimized application performance and loading times
+                      <br />
+                    </p>
                   </motion.div>
+                </div>
+              </motion.div>
+              {/* Soft Skills */}
+              <motion.div
+                className="bg-neutral-900 p-4 sm:p-6 rounded-2xl border border-black ring-2 ring-neutral-700"
+                variants={itemVariants}
+              >
+                <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+                  Soft Skills
+                </h2>
+                <div className="grid grid-cols-2 gap-3">
+                  {softSkills.map((skill) => (
+                    <div
+                      key={skill}
+                      className="bg-neutral-800 rounded-lg p-3 text-sm"
+                    >
+                      {skill}
+                    </div>
+                  ))}
                 </div>
               </motion.div>
             </div>
 
-            {/* Services */}
             <div className="space-y-6 sm:space-y-8">
+              {/* Services */}
               <motion.div
                 className="bg-neutral-900 p-4 sm:p-6 rounded-2xl border border-black ring-2 ring-neutral-700"
                 variants={itemVariants}
@@ -175,27 +248,28 @@ const About = () => {
                 <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
                   Services
                 </h2>
-                <div className="grid grid-cols-2 gap-3 sm:gap-4 ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {services.map((service) => (
                     <ServiceCard
                       key={service.title}
                       Icon={service.Icon}
                       title={service.title}
+                      description={service.description}
                     />
                   ))}
                 </div>
               </motion.div>
 
-              {/* Skills */}
+              {/* Technical Skills */}
               <motion.div
                 className="bg-neutral-900 p-4 sm:p-6 rounded-2xl border border-black ring-2 ring-neutral-700"
                 variants={itemVariants}
               >
                 <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-                  Skills
+                  Technical Skills
                 </h2>
-                <div className="space-y-3 sm:space-y-4 ">
-                  {skills.map((skill) => (
+                <div className="space-y-4">
+                  {technicalSkills.map((skill) => (
                     <motion.div key={skill.name} variants={itemVariants}>
                       <div className="flex justify-between mb-2">
                         <span className="text-sm sm:text-base font-medium">
@@ -205,13 +279,14 @@ const About = () => {
                           {skill.percentage}%
                         </span>
                       </div>
-                      <div className="h-1.5 sm:h-2 bg-neutral-800 rounded-full">
+                      <div className="h-1.5 sm:h-2 bg-neutral-800 rounded-full mb-2">
                         <motion.div
                           className="h-full bg-neutral-500 rounded-full"
                           custom={skill.percentage}
                           variants={skillBarVariants}
                         />
                       </div>
+                      <p className="text-xs text-neutral-400">{skill.tools}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -225,4 +300,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default page;

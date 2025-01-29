@@ -220,9 +220,11 @@ const Hero = () => {
           >
             <div className="text-gray-400 mb-2">SHOWCASE</div>
             <h2 className="text-xl sm:text-2xl font-bold mb-4">Projects</h2>
+            <Link href={"/projects"}> 
             <div className="mb-6 flex items-center justify-center">
               <ProjectSlidershow />
             </div>
+            </Link>
             <motion.button
               className="text-gray-400 hover:text-white float-right"
               whileHover={{ scale: 1.1, rotate: 90 }}
