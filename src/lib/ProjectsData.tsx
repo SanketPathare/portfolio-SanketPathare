@@ -94,12 +94,45 @@ export const projects: { [key: string]: ProjectType } = {
     title: "FitClub",
     category: "WEB DESIGNING",
     description:
-      "FitClub is a fitness and wellness platform that allows users to create and join workout groups, track their progress, and receive personalized recommendations. It was built using ReactJS and CSS.",
+      "FitClub is a fitness and wellness platform that allows users to create and join workout groups, track their progress, and receive personalized recommendations. It was built using NextJS Tailwind CSS.",
     GithubLink: "https://github.com/SanketPathare/fitclub",
     LiveLink: "https://fitclub-plum.vercel.app/",
     duration: "1 week",
     technologies: ["TS", "Next", "Tailwind css"],
     image: image.Fitclub,
+  },
+  RecipeApp: {
+    title: "Recipe App",
+    category: "WEB DESIGNING",
+    description:
+      "Recipe App is a web application that allows users to search for recipes by ingredients, cooking methods, or cuisines. It uses the Edamam API to fetch the recipes and displays them in a user-friendly interface. It was built using Tailwind CSS.",
+    GithubLink: "https://github.com/SanketPathare/recipe-app",
+    LiveLink: "https://recipe-app-one-zeta.vercel.app/",
+    duration: "1 week",
+    technologies: ["JS", "Next", "Tailwind css"],
+    image: image.RecipeApp,
+  },
+  NewsApp: {
+    title: "News App",
+    category: "WEB DESIGNING",
+    description:
+      "News App is a web application that allows users to browse and read news articles from various sources. It uses the News API to fetch the news articles and displays them in a user-friendly interface. It was built using NextJS and Tailwind CSS.",
+    GithubLink: "https://github.com/SanketPathare/News-App",
+    LiveLink: "https://news-app-indol-mu-38.vercel.app/",
+    duration: "1 week",
+    technologies: ["TS", "Next", "Tailwind css"],
+    image: image.NewsApp,
+  },
+  WeatherApp: {
+    title: "Weather App",
+    category: "WEB DESIGNING",
+    description:
+      "Weather App is a web application that allows users to search for weather information by city name. It uses the OpenWeatherMap API to fetch the weather data and displays it in a user-friendly interface. It was built using R NextJS and Tailwind CSS.",
+    GithubLink: "https://github.com/SanketPathare/weather-app",
+    LiveLink: "https://weather-app-one-jade-20.vercel.app/",
+    duration: "1 week",
+    technologies: ["JS", "Next", "Tailwind css"],
+    image: image.Weatherapp,
   },
 };
 

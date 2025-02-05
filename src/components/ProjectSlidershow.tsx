@@ -10,9 +10,12 @@ const ProjectSlidershow = () => {
     { id: 3, src: image.CryptoAppImg, alt: "Slide 3" },
     { id: 4, src: image.GeminiImg, alt: "Slide 4" },
     { id: 5, src: image.ElectromartImg, alt: "Slide 5" },
-    { id: 6, src : image.AnimeReview, alt: "Slide 6" },
-    { id: 7, src : image.MoviesReview, alt: "Slide 7" },
-    { id: 8, src : image.Fitclub, alt: "Slide 8" },
+    { id: 6, src: image.AnimeReview, alt: "Slide 6" },
+    { id: 7, src: image.MoviesReview, alt: "Slide 7" },
+    { id: 8, src: image.Fitclub, alt: "Slide 8" },
+    { id: 8, src: image.NewsApp, alt: "Slide 9" },
+    { id: 8, src: image.RecipeApp, alt: "Slide 10" },
+    { id: 8, src: image.Weatherapp, alt: "Slide 11" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,7 +45,7 @@ const ProjectSlidershow = () => {
               src={image.src}
               alt={image.alt}
               fill
-              style={{objectFit: "fill"}}
+              style={{ objectFit: "fill" }}
               className=" object-contain p-1"
             />
           </div>
