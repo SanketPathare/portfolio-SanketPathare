@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -45,11 +45,11 @@ export default function ContactForm() {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="bg-neutral-900 p-8 rounded-2xl"
+      className="bg-neutral-900 p-4 sm:p-8 rounded-2xl" // Added sm:p-8 for larger padding on small screens and up
     >
       <motion.h2 
         variants={itemVariants}
-        className="text-4xl font-bold mb-8"
+        className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8" // Adjusted font sizes and margin for responsiveness
       >
         <span className="text-white">Let&apos;s work </span>
         <span className="text-gray-500">Together.</span>
@@ -58,13 +58,13 @@ export default function ContactForm() {
       <motion.form 
         onSubmit={handleSubmit} 
         variants={containerVariants}
-        className="space-y-6"
+        className="space-y-4 sm:space-y-6" // Adjusted spacing for responsiveness
       >
         <motion.div variants={itemVariants}>
           <input
             type="text"
             placeholder="Name *"
-            className="w-full bg-neutral-800 text-white p-3 rounded-md"
+            className="w-full bg-neutral-800 text-white p-2 sm:p-3 rounded-md" // Adjusted padding for responsiveness
             required
             value={formData.name}
             onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -75,7 +75,7 @@ export default function ContactForm() {
           <input
             type="email"
             placeholder="Email *"
-            className="w-full bg-neutral-800 text-white p-3 rounded-md"
+            className="w-full bg-neutral-800 text-white p-2 sm:p-3 rounded-md" // Adjusted padding for responsiveness
             required
             value={formData.email}
             onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -86,7 +86,7 @@ export default function ContactForm() {
           <input
             type="text"
             placeholder="Your Subject *"
-            className="w-full bg-neutral-800 text-white p-3 rounded-md"
+            className="w-full bg-neutral-800 text-white p-2 sm:p-3 rounded-md" // Adjusted padding for responsiveness
             required
             value={formData.subject}
             onChange={(e) => setFormData({...formData, subject: e.target.value})}
@@ -96,8 +96,8 @@ export default function ContactForm() {
         <motion.div variants={itemVariants}>
           <textarea
             placeholder="Your Message *"
-            rows={6}
-            className="w-full bg-neutral-800 text-white p-3 rounded-md"
+            rows={4} // Reduced rows for smaller screens
+            className="w-full bg-neutral-800 text-white p-2 sm:p-3 rounded-md" // Adjusted padding for responsiveness
             required
             value={formData.message}
             onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -107,7 +107,7 @@ export default function ContactForm() {
         <motion.button
           variants={itemVariants}
           type="submit"
-          className="w-full bg-neutral-800 text-white py-4 rounded-md hover:bg-gray-700 transition"
+          className="w-full bg-neutral-800 text-white py-3 sm:py-4 rounded-md hover:bg-gray-700 transition" // Adjusted padding for responsiveness
         >
           Send Message
         </motion.button>

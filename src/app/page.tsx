@@ -5,11 +5,11 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   return (
     <>
-    <div className="">
-    <Navbar/>
-     <Hero/>
-    <Footer/>
-    </div>
+     
+        <Navbar />
+        <Hero />
+        <Footer />
+     
     </>
   );
 }

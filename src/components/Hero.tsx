@@ -52,7 +52,7 @@ const Hero = () => {
 
   return (
     <motion.div
-      className="min-h-screen text-white p-4 sm:p-8  mt-8"
+      className="min-h-screen  text-white p-4 sm:p-8  mt-8"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -76,6 +76,7 @@ const Hero = () => {
               width={300}
               height={300}
               className="rounded-lg bg-neutral-900 mb-4 mx-auto"
+              priority // Added priority for faster loading
             />
           </motion.div>
           <div className="text-center">
@@ -129,6 +130,7 @@ const Hero = () => {
                 width={170}
                 height={200}
                 className="filter grayscale hover:grayscale-0 hover:shadow-white hover:shadow-3xl"
+                priority // Added priority for faster loading
               />
             </Tilt>
           </div>
@@ -220,10 +222,10 @@ const Hero = () => {
           >
             <div className="text-gray-400 mb-2">SHOWCASE</div>
             <h2 className="text-xl sm:text-2xl font-bold mb-4">Projects</h2>
-            <Link href={"/projects"}> 
-            <div className="mb-6 flex items-center justify-center">
-              <ProjectSlidershow />
-            </div>
+            <Link href={"/projects"}>
+              <div className="mb-6 flex items-center justify-center">
+                <ProjectSlidershow />
+              </div>
             </Link>
             <motion.button
               className="text-gray-400 hover:text-white float-right"
@@ -288,7 +290,7 @@ const Hero = () => {
           <h2 className="text-xl sm:text-2xl font-bold mb-4">
             Services Offering
           </h2>
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-2 gap-4 mb-6 sm:grid-cols-2"> {/* Adjust grid for smaller screens */}
             {[
               {
                 icon: (
@@ -406,7 +408,7 @@ const Hero = () => {
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4 sm:grid-cols-3"> {/* Adjust grid for smaller screens */}
             {[
               {
                 number: <NumberTicker value={3} className="text-white" />,

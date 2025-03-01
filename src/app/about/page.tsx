@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const page = () => {
+const Page = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -57,8 +57,8 @@ const page = () => {
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
         <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
       </div>
-      <h3 className="text-sm sm:text-base font-semibold mb-2">{title}</h3>
-      <p className="text-xs sm:text-sm text-neutral-400">{description}</p>
+      <h3 className="text-base sm:text-lg font-semibold mb-2">{title}</h3>
+      <p className="text-sm sm:text-md text-neutral-400">{description}</p>
     </motion.div>
   );
 
@@ -115,39 +115,59 @@ const page = () => {
     "Adaptability",
   ];
 
-  const certifications = [
-    {
-      name: "AWS Certified Developer",
-      issuer: "Amazon Web Services",
-      year: "2023",
-    },
-    {
-      name: "Professional Scrum Master I",
-      issuer: "Scrum.org",
-      year: "2023",
-    },
-  ];
+  const ExperienceItem = ({
+    startDate,
+    endDate,
+    title,
+    company,
+    description,
+  }: {
+    startDate: string;
+    endDate: string;
+    title: string;
+    company: string;
+    description: string;
+  }) => (
+    <motion.div variants={itemVariants} className="relative">
+      <div className="flex flex-col sm:flex-row sm:justify-between text-sm text-neutral-400">
+        <span className="mb-1 sm:mb-0">
+          {startDate} - {endDate}
+        </span>
+        <span>{title}</span>
+      </div>
+      <h3 className="font-semibold mt-1 text-lg">{company}</h3>
+      <p className="text-base text-neutral-400 mt-2 whitespace-pre-line">
+        {description}
+      </p>
+
+      {/* Timeline Dot and Line */}
+      <div className="absolute left-0 top-0 h-full ml-[-10px] sm:ml-[-15px] w-0.5 bg-neutral-700">
+        <div className="absolute w-3 h-3 bg-neutral-500 rounded-full top-1/4 -translate-y-1/2 left-[-5px] sm:left-[-6px]"></div>
+      </div>
+    </motion.div>
+  );
 
   return (
     <>
       <Navbar />
       <motion.main
-        className="min-h-screen pt-16 sm:pt-24 pb-8 sm:pb-12 mx-4 sm:mx-8 "
+        className="min-h-screen pt-16 sm:pt-24 pb-8 sm:pb-12 mx-4 sm:mx-8"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <div className="container mx-auto px-2 sm:px-4 ">
+        <div className="container mx-auto px-2 sm:px-4">
           <motion.h1
-            className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 mt-4"
+            className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 mt-4 text-center sm:text-left"
             variants={itemVariants}
           >
             SELF-SUMMARY
           </motion.h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12">
+            {/* Left Column */}
             <div className="space-y-6 sm:space-y-8">
-              {/* page Me */}
+              {/* Get To Know Me */}
               <motion.div
                 className="bg-neutral-900 p-4 sm:p-6 rounded-2xl border border-black ring-2 ring-neutral-700"
                 variants={itemVariants}
@@ -157,8 +177,11 @@ const page = () => {
                 </h2>
                 <div className="space-y-4 sm:space-y-6">
                   <div>
-                    <h3 className="text-sm leading-relaxed text-neutral-400">
-                      Hi, I'm Sanket Pathare, a passionate full-stack developer
+                    <motion.p
+                      className="text-base leading-relaxed text-neutral-400"
+                      variants={itemVariants} // Apply itemVariants for individual paragraph animation
+                    >
+                      Hi, I'm Sanket Pathare, a passionate Full-stack developer
                       based in Pune, India. Currently pursuing my BTech in
                       Computer Science Engineering, I combine academic
                       excellence with practical experience in web development.
@@ -167,14 +190,15 @@ const page = () => {
                       responsive designs. I'm particularly interested in
                       creating innovative solutions that solve real-world
                       problems. My approach combines technical expertise with
-                      creative problem-solving, ensuring that each project
-                      <br className="hidden sm:block" /> not only functions flawlessly but also provides an
-                      exceptional user experience.
-                    </h3>
+                      creative problem-solving, ensuring that each project not
+                      only functions flawlessly but also provides an exceptional
+                      user experience.
+                    </motion.p>
                   </div>
                 </div>
               </motion.div>
-              {/* Experience */}
+
+              {/* Professional Experience */}
               <motion.div
                 className="bg-neutral-900 p-4 sm:p-6 rounded-2xl border border-black ring-2 ring-neutral-700"
                 variants={itemVariants}
@@ -182,42 +206,32 @@ const page = () => {
                 <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
                   Professional Experience
                 </h2>
-                <div className="space-y-4 sm:space-y-6">
-                  <motion.div variants={itemVariants}>
-                    <div className="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-neutral-400">
-                      <span className="mb-1 sm:mb-0">2023 - Present</span>
-                      <span>Full Stack Development</span>
-                    </div>
-                    <h3 className="font-semibold mt-1">
-                      Senior Developer at Divinify
-                    </h3>
-                    <p className="text-sm text-neutral-400 mt-2">
-                      • Led development of multiple client projects using React
-                      and Node.js <br />
-                      • Implemented CI/CD pipelines and improved deployment
-                      processes <br />
-                      • Mentored junior developers and conducted code reviews
-                      <br />
-                    </p>
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
-                    <div className="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-neutral-400">
-                      <span className="mb-1 sm:mb-0">2021 - 2023</span>
-                      <span>Frontend Development</span>
-                    </div>
-                    <h3 className="font-semibold mt-1">Frontend Developer</h3>
-                    <p className="text-sm text-neutral-400 mt-2">
-                      • Developed responsive web applications using React and
-                      Next.js <br />
-                      • Collaborated with UI/UX designers to implement
-                      pixel-perfect designs
-                      <br />
-                      • Optimized application performance and loading times
-                      <br />
-                    </p>
-                  </motion.div>
+                <div className="space-y-4 sm:space-y-6 relative pl-6 sm:pl-8">
+                  {/* Timeline Line */}
+                  {/* <div className="absolute left-0 top-0 h-full ml-[-10px] sm:ml-[-15px] w-0.5 bg-neutral-700"></div> */}
+
+                  <ExperienceItem
+                    startDate="2023"
+                    endDate="Present"
+                    title="Full Stack Development"
+                    company="Senior Developer at Divinify"
+                    description={`• Led development of multiple client projects using React and Node.js
+                      • Implemented CI/CD pipelines and improved deployment processes
+                      • Mentored junior developers and conducted code reviews`}
+                  />
+
+                  <ExperienceItem
+                    startDate="2021"
+                    endDate="2023"
+                    title="Frontend Development"
+                    company="Frontend Developer"
+                    description={`• Developed responsive web applications using React and Next.js
+                      • Collaborated with UI/UX designers to implement pixel-perfect designs
+                      • Optimized application performance and loading times`}
+                  />
                 </div>
               </motion.div>
+
               {/* Soft Skills */}
               <motion.div
                 className="bg-neutral-900 p-4 sm:p-6 rounded-2xl border border-black ring-2 ring-neutral-700"
@@ -228,17 +242,19 @@ const page = () => {
                 </h2>
                 <div className="grid grid-cols-2 gap-3">
                   {softSkills.map((skill) => (
-                    <div
+                    <motion.div
                       key={skill}
-                      className="bg-neutral-800 rounded-lg p-3 text-sm"
+                      className="bg-neutral-800 rounded-lg p-3 text-md"
+                      variants={itemVariants} // Apply itemVariants to soft skills
                     >
                       {skill}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
             </div>
 
+            {/* Right Column */}
             <div className="space-y-6 sm:space-y-8">
               {/* Services */}
               <motion.div
@@ -272,7 +288,7 @@ const page = () => {
                   {technicalSkills.map((skill) => (
                     <motion.div key={skill.name} variants={itemVariants}>
                       <div className="flex justify-between mb-2">
-                        <span className="text-sm sm:text-base font-medium">
+                        <span className="text-base sm:text-lg font-medium">
                           {skill.name}
                         </span>
                         <span className="text-sm sm:text-base text-neutral-400">
@@ -286,7 +302,7 @@ const page = () => {
                           variants={skillBarVariants}
                         />
                       </div>
-                      <p className="text-xs text-neutral-400">{skill.tools}</p>
+                      <motion.p className="text-xs text-neutral-400" variants={itemVariants}>{skill.tools}</motion.p>
                     </motion.div>
                   ))}
                 </div>
@@ -300,4 +316,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
