@@ -13,9 +13,13 @@ const ProjectSlidershow = () => {
     { id: 6, src: image.AnimeReview, alt: "Slide 6" },
     { id: 7, src: image.MoviesReview, alt: "Slide 7" },
     { id: 8, src: image.Fitclub, alt: "Slide 8" },
-    { id: 8, src: image.NewsApp, alt: "Slide 9" },
-    { id: 8, src: image.RecipeApp, alt: "Slide 10" },
-    { id: 8, src: image.Weatherapp, alt: "Slide 11" },
+    { id: 9, src: image.NewsApp, alt: "Slide 9" },
+    { id: 10, src: image.RecipeApp, alt: "Slide 10" },
+    { id: 11, src: image.Weatherapp, alt: "Slide 11" },
+    { id: 12, src: image.GlobalDoorsKitchen, alt: "Slide 12" },
+    { id: 13, src: image.GameInfo, alt: "Slide 13" },
+    { id: 14, src: image.GithubSearch, alt: "Slide 14" },
+    { id: 15, src: image.CheatSheetAI, alt: "Slide 15" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

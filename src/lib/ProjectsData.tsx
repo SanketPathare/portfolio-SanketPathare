@@ -134,6 +134,56 @@ export const projects: { [key: string]: ProjectType } = {
     technologies: ["JS", "Next", "Tailwind css"],
     image: image.Weatherapp,
   },
+  GlobalDoorsKitchen: {
+    title: "Global Doors Kitchen",
+    category: "WEB DESIGNING",
+    description:
+      "Global Doors Kitchen is a website for a kitchen appliance company.It was built using NextJS, Tailwind CSS, Framer Motion and Sanity CRM.",
+    GithubLink: "https://github.com/SanketPathare/Global-Doors-Kitchen",
+    LiveLink: "https://global-doors-kitchen.vercel.app/",
+    duration: "1 week",
+    technologies: [
+      "TS",
+      "Next",
+      "Tailwind css",
+      "Framer Motion",
+      " Sanity CRM",
+    ],
+    image: image.GlobalDoorsKitchen,
+  },
+  GithubSearch: {
+    title: "Github Search",
+    category: "WEB DESIGNING",
+    description:
+      "Github Search is a web application that allows users to search for repositories by username and display the results in a user-friendly interface. It was built using  NextJS, Tailwind CSS.",
+    GithubLink: "https://github.com/SanketPathare/github-search",
+    LiveLink: "https://github-search-beta-seven.vercel.app/",
+    duration: "1 week",
+    technologies: ["Next", "Tailwind css"],
+    image: image.GithubSearch,
+  },
+  CheatSheetAI: {
+    title: "Cheat Sheet AI",
+    category: "WEB DESIGNING",
+    description:
+      "Cheat Sheet AI is a web application that allows users to create and share cheat sheets for various programming languages. It was built using ReactJS, NextJS, and Tailwind CSS.",
+    GithubLink: "https://github.com/SanketPathare/CheatSheetAI",
+    LiveLink: "https://cheat-sheet-ai.vercel.app/",
+    duration: "1 week",
+    technologies: ["React", "Next", "Tailwind css"],
+    image: image.CheatSheetAI,
+  },
+  GameInfo:{
+    title: "Game Info",
+    category: "WEB DESIGNING",
+    description:
+      "Game Info is a web application that allows users to search for game information by title and display the results in a user-friendly interface. It was built using ReactJS, NextJS, and Tailwind CSS.",
+    GithubLink: "https://github.com/SanketPathare/game-info",
+    LiveLink: "https://game-info-zeta.vercel.app//",
+    duration: "1 week",
+    technologies: ["React", "Next", "Tailwind css"],
+    image: image.GameInfo,
+  }
 };
 
 export async function getProjectData(
