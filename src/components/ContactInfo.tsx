@@ -50,14 +50,14 @@ export default function ContactInfo() {
 
   return (
     <motion.div
-      className="bg-neutral-900 text-white border border-black ring-2 ring-neutral-700 rounded-2xl p-4 sm:p-8" // Added responsive padding
+      className="bg-neutral-900 text-white border border-black ring-2 ring-neutral-700 rounded-2xl p-4 sm:p-8" 
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       <motion.h2
         variants={itemVariants}
-        className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8" // Added responsive font size and margin
+        className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8" 
       >
         <span className="text-white"> Contact </span>
         <span className="text-gray-500">Info -</span>

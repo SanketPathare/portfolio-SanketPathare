@@ -36,9 +36,9 @@ const ProjectSlidershow = () => {
   }, [images.length]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto relative overflow-hidden flex justify-center items-center ">
+    <div className="relative flex items-center justify-center w-full max-w-2xl p-2 mx-auto overflow-hidden">
       {/* Image container */}
-      <div className="relative h-[205px] w-[350px] object-cover rounded-lg border-4 border-neutral-700">
+      <div className="relative h-[210px] w-[400px] object-cover  border-4 border-neutral-700 rounded-lg">
         {images.map((image, index) => (
           <div
             key={image.id}
@@ -50,7 +50,7 @@ const ProjectSlidershow = () => {
               alt={image.alt}
               fill
               style={{ objectFit: "fill" }}
-              className=" object-contain p-1"
+              className="object-contain p-1 "
             />
           </div>
         ))}

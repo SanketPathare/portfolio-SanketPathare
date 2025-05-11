@@ -14,7 +14,6 @@ import { image } from "../../public/image";
 import NumberTicker from "@/components/ui/number-ticker";
 import Link from "next/link";
 
-//Replace these with your actual image imports or paths
 const AvatarImg = image.AvatarImg;
 
 const Hero = () => {
@@ -52,16 +51,16 @@ const Hero = () => {
 
   return (
     <motion.div
-      className="min-h-screen  text-white p-4 sm:p-8  mt-8"
+      className="p-4 text-white sm:p-8"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      <div className="grid grid-cols-1 gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3">
         {/* Profile Card */}
         <motion.div
-          className="bg-neutral-900 rounded-2xl p-4 sm:p-6 border border-black ring-2 ring-neutral-700"
+          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
           whileHover={hoverScale}
         >
@@ -75,7 +74,7 @@ const Hero = () => {
               alt="Profile Avatar"
               width={300}
               height={300}
-              className="rounded-lg bg-neutral-900 mb-4 mx-auto"
+              className="mx-auto mb-4 rounded-lg bg-neutral-900"
               priority // Added priority for faster loading
             />
           </motion.div>
@@ -89,7 +88,7 @@ const Hero = () => {
               A WEB DEVELOPER
             </motion.div>
             <motion.h1
-              className="text-2xl sm:text-3xl font-bold mb-4"
+              className="mb-4 text-2xl font-bold sm:text-3xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -97,7 +96,7 @@ const Hero = () => {
               Sanket Pathare.
             </motion.h1>
             <motion.p
-              className="text-gray-400 mb-6"
+              className="mb-6 text-gray-400"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
@@ -109,13 +108,13 @@ const Hero = () => {
 
         {/* Credentials Card */}
         <motion.div
-          className="bg-neutral-900 rounded-2xl p-4 sm:p-6 border border-black ring-2 ring-neutral-700"
+          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="text-gray-400 mb-2">MORE ABOUT ME</div>
-          <h2 className="text-xl sm:text-2xl font-bold ">Credentials</h2>
-          <div className="flex justify-center items-center">
+          <div className="mb-2 text-gray-400">MORE ABOUT ME</div>
+          <h2 className="text-xl font-bold sm:text-2xl ">Credentials</h2>
+          <div className="flex items-center justify-center">
             <Tilt
               className="background-stripes parallax-effect-glare-scale"
               perspective={500}
@@ -134,24 +133,13 @@ const Hero = () => {
               />
             </Tilt>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center p-4 w-full max-w-2xl mx-auto">
+          <div className="flex flex-col items-center justify-center w-full max-w-2xl gap-4 p-4 mx-auto sm:flex-row">
             {/* Resume Download Button */}
-            <button
-              className="relative w-full sm:w-40 h-12 cursor-pointer flex items-center 
-                justify-center border-2 rounded-lg bg-black overflow-hidden 
-                group hover:bg-neutral-800 border-neutral-700 active:border-neutral-700
-                transition-all duration-300"
-            >
-              <span
-                className="transform text-white text-sm transition-all duration-300
-                  group-hover:opacity-0 flex items-center justify-center gap-3"
-              >
+            <button className="relative flex items-center justify-center w-full h-12 overflow-hidden transition-all duration-300 bg-black border-2 rounded-lg cursor-pointer sm:w-40 group hover:bg-neutral-800 border-neutral-700 active:border-neutral-700">
+              <span className="flex items-center justify-center gap-3 text-sm text-white transition-all duration-300 transform group-hover:opacity-0">
                 Resume <Icon icon="material-symbols:download" width="20" />
               </span>
-              <span
-                className="absolute inset-0 flex items-center justify-center
-                  opacity-0 group-hover:opacity-100 transition-all duration-300"
-              >
+              <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
                 <a href="/SanketPathare_ Resume.pdf" download={true}>
                   <Icon icon="material-symbols:download" width="20" />
                 </a>
@@ -165,12 +153,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="w-full sm:w-40"
             >
-              <button
-                className="w-full h-12 cursor-pointer border-2 border-neutral-700 rounded-lg
-                  bg-black hover:bg-neutral-800
-                  flex items-center justify-center gap-3
-                  text-white transition-all duration-300"
-              >
+              <button className="flex items-center justify-center w-full h-12 gap-3 text-white transition-all duration-300 bg-black border-2 rounded-lg cursor-pointer border-neutral-700 hover:bg-neutral-800">
                 <span className="text-sm">Contact</span>
                 <Icon icon="mdi:contact" width="20" height="20" />
               </button>
@@ -179,7 +162,7 @@ const Hero = () => {
 
           <br />
           <motion.button
-            className="text-gray-400 hover:text-white float-right "
+            className="float-right text-gray-400 hover:text-white "
             whileHover={{ scale: 1.1, rotate: 90 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -191,23 +174,18 @@ const Hero = () => {
 
         {/* Marquee Section */}
         <motion.div variants={cardVariants}>
-          <div className="flex justify-center items-center w-full ">
+          <div className="flex items-center justify-center w-full ">
             <motion.div
-              className=" hidden sm:block text-sm text-gray-400 border border-black ring-2 ring-neutral-700 rounded-lg p-2"
-              whileHover={{ borderColor: "#FFFF" }}
+              className="hidden p-2 text-sm text-gray-400 border border-black rounded-lg sm:block ring-2 ring-neutral-700"
+              whileHover={{ borderColor: "#151515" }}
             >
-              <Marquee
-                speed={50}
-                gradient={false}
-                pauseOnHover={true}
-                className=""
-              >
-                <span className="text-white mr-2 flex">
+              <Marquee speed={30} gradient={false} pauseOnHover={true}>
+                <span className="flex mr-2 text-white">
                   <GoDotFill />
                 </span>
                 LATEST PROJECTS AND
-                <span className="text-white ml-1">FEATURED</span>
-                <span className="text-white ml-2 flex">
+                <span className="ml-1 text-white">FEATURED</span>
+                <span className="flex ml-2 text-white">
                   <GoDotFill />
                 </span>
               </Marquee>
@@ -216,19 +194,19 @@ const Hero = () => {
 
           {/* Showcase Card */}
           <motion.div
-            className="bg-neutral-900 rounded-2xl p-4 sm:p-6 h-[380px] mt-8  border border-black ring-2 ring-neutral-700"
+            className="bg-neutral-900 rounded-2xl p-4 sm:p-6 h-[395px] mt-4  border border-black ring-2 ring-neutral-700"
             variants={cardVariants}
             whileHover={hoverScale}
           >
-            <div className="text-gray-400 mb-2">SHOWCASE</div>
-            <h2 className="text-xl sm:text-2xl font-bold mb-4">Projects</h2>
+            <div className="mb-2 text-gray-400">SHOWCASE</div>
+            <h2 className="mb-4 text-xl font-bold sm:text-2xl">Projects</h2>
             <Link href={"/projects"}>
-              <div className="mb-6 flex items-center justify-center">
+              <div className="flex items-center justify-center mb-6">
                 <ProjectSlidershow />
               </div>
             </Link>
             <motion.button
-              className="text-gray-400 hover:text-white float-right"
+              className="float-right text-gray-400 hover:text-white"
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -241,12 +219,12 @@ const Hero = () => {
 
         {/* Contact Card */}
         <motion.div
-          className="bg-neutral-900 rounded-2xl p-4 sm:p-6  border border-black ring-2 ring-neutral-700"
+          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="text-gray-400 mb-2">GET IN TOUCH</div>
-          <h2 className="text-xl sm:text-2xl font-bold mb-4">Contact Me</h2>
+          <div className="mb-2 text-gray-400">GET IN TOUCH</div>
+          <h2 className="mb-4 text-xl font-bold sm:text-2xl">Contact Me</h2>
           <motion.div className="space-y-4">
             {[
               {
@@ -282,15 +260,16 @@ const Hero = () => {
 
         {/* Services Card */}
         <motion.div
-          className="bg-neutral-900 rounded-2xl p-4 sm:p-6  border border-black ring-2 ring-neutral-700"
+          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="text-gray-400 mb-2">SPECIALIZATION</div>
-          <h2 className="text-xl sm:text-2xl font-bold mb-4">
+          <div className="mb-2 text-gray-400">SPECIALIZATION</div>
+          <h2 className="mb-4 text-xl font-bold sm:text-2xl">
             Services Offering
           </h2>
-          <div className="grid grid-cols-2 gap-4 mb-6 sm:grid-cols-2"> {/* Adjust grid for smaller screens */}
+          <div className="grid grid-cols-2 gap-4 mb-6 sm:grid-cols-2">
+            {" "}
             {[
               {
                 icon: (
@@ -327,13 +306,13 @@ const Hero = () => {
             ].map((service, index) => (
               <motion.div
                 key={index}
-                className="p-4 bg-neutral-800 rounded-lg  "
+                className="p-4 border-2 rounded-lg bg-neutral-800/50 border-neutral-700"
                 whileHover={{ scale: 1.05, backgroundColor: "#404040" }}
               >
-                <h1 className=" mb-2  flex justify-center items-center ">
+                <h1 className="flex items-center justify-center mb-2 ">
                   {service.icon}
                 </h1>
-                <h2 className="text-gray-400 hover:text-white text-sm flex  justify-center items-center">
+                <h2 className="flex items-center justify-center text-sm text-gray-400 hover:text-white">
                   {service.text}
                 </h2>
               </motion.div>
@@ -343,15 +322,15 @@ const Hero = () => {
 
         {/* Social Profiles Card */}
         <motion.div
-          className="bg-neutral-900 rounded-2xl p-4 sm:p-6  border border-black ring-2 ring-neutral-700"
+          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="text-gray-400 mb-2">STAY WITH ME</div>
-          <h2 className="text-xl sm:text-2xl font-bold mb-4">Profiles</h2>
+          <div className="mb-2 text-gray-400">STAY WITH ME</div>
+          <h2 className="mb-4 text-xl font-bold sm:text-2xl">Profiles</h2>
           <div className="flex items-center justify-center">
             <motion.div
-              className="flex justify-center space-x-4 mb-6 rounded-full border-4 border-white h-40 w-40 items-center"
+              className="flex items-center justify-center w-40 h-40 mb-6 space-x-4 border-4 border-white rounded-full"
               animate={{ rotate: 0 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
@@ -402,13 +381,15 @@ const Hero = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 ">
+      <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 ">
         <motion.div
-          className="bg-neutral-900 rounded-2xl p-4 sm:p-6  border border-black ring-2 ring-neutral-700"
+          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="grid grid-cols-3 gap-4 sm:grid-cols-3"> {/* Adjust grid for smaller screens */}
+          <div className="grid grid-cols-3 gap-4 sm:grid-cols-3">
+            {" "}
+            {/* Adjust grid for smaller screens */}
             {[
               {
                 number: <NumberTicker value={3} className="text-white" />,
@@ -429,10 +410,10 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
               >
-                <div className="text-3xl sm:text-4xl font-bold mb-2">
+                <div className="mb-2 text-3xl font-bold sm:text-4xl">
                   +{stat.number}
                 </div>
-                <div className="text-gray-400 text-xs sm:text-sm whitespace-pre-line">
+                <div className="text-xs text-gray-400 whitespace-pre-line sm:text-sm">
                   {stat.text}
                 </div>
               </motion.div>
@@ -441,12 +422,12 @@ const Hero = () => {
         </motion.div>
         {/* work together */}
         <motion.div
-          className="bg-neutral-900 rounded-2xl p-4 sm:p-6  border border-black ring-2 ring-neutral-700"
+          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
           whileHover={hoverScale}
         >
           <div className="flex items-center justify-between">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-2">
+            <h2 className="mb-2 text-3xl font-bold sm:text-4xl">
               Let&apos;s
               <br />
               work <span className="text-gray-500">together</span>.
