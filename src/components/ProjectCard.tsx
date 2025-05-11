@@ -8,7 +8,12 @@ interface ProjectCardProps {
   image: string;
   slug: string;
 }
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, category, image, slug }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  category,
+  image,
+  slug,
+}) => {
   return (
     <a href={`/projects/${slug}`} className="block no-underline">
       <motion.div
