@@ -4,31 +4,31 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-900 py-4 mx-4 sm:mx-17 rounded-lg mb-4 border border-black ring-2 ring-neutral-700 bottom-0">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+    <footer className="bottom-0 py-4 mx-auto mb-4 border border-black rounded-lg bg-neutral-900 sm:mx-17 ring-2 ring-neutral-700">
+      <div className="container px-4 mx-auto">
+        <div className="flex flex-col items-center justify-between md:flex-row">
           <div className="mb-6 md:mb-0">
             <Link
               href="/"
-              className="text-2xl font-bold text-white hover:text-neutral-300 transition-colors"
+              className="text-2xl font-bold text-white transition-colors hover:text-neutral-300"
             >
               SP
             </Link>
           </div>
-          <div className="text-center text-neutral-400 text-base">
+          <div className="text-base text-center text-neutral-400">
             {new Date().getFullYear()} © All rights reserved.
           </div>
 
           <div className="flex space-x-4">
             <a
               href="#"
-              className="w-10 h-10 bg-neutral-800 rounded-full flex items-center justify-center hover:bg-neutral-700 hover:scale-105 transition-all"
+              className="flex items-center justify-center w-10 h-10 transition-all rounded-full bg-neutral-800 hover:bg-neutral-700 hover:scale-105"
             >
               <Twitter className="w-5 h-5 text-white" />
             </a>
             <a
               href="#"
-              className="w-10 h-10 bg-neutral-800 rounded-full flex items-center justify-center hover:bg-neutral-700 hover:scale-105 transition-all"
+              className="flex items-center justify-center w-10 h-10 transition-all rounded-full bg-neutral-800 hover:bg-neutral-700 hover:scale-105"
             >
               <Dribbble className="w-5 h-5 text-white" />
             </a>
@@ -42,10 +42,10 @@ const Footer = () => {
 export default Footer;
 
 {
-  /* <div className="flex space-x-8 mb-6 md:mb-0">
-            <Link href="/" className="hover:text-blue-500 transition">Home</Link>
-            <Link href="/about" className="hover:text-blue-500 transition">About</Link>
-            <Link href="/works" className="hover:text-blue-500 transition">Works</Link>
-            <Link href="/contact" className="hover:text-blue-500 transition">Contact</Link>
+  /* <div className="flex mb-6 space-x-8 md:mb-0">
+            <Link href="/" className="transition hover:text-blue-500">Home</Link>
+            <Link href="/about" className="transition hover:text-blue-500">About</Link>
+            <Link href="/works" className="transition hover:text-blue-500">Works</Link>
+            <Link href="/contact" className="transition hover:text-blue-500">Contact</Link>
           </div>  */
 }

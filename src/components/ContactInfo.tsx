@@ -50,14 +50,14 @@ export default function ContactInfo() {
 
   return (
     <motion.div
-      className="bg-neutral-900 text-white border border-black ring-2 ring-neutral-700 rounded-2xl p-4 sm:p-8" 
+      className="p-4 text-white border border-black bg-neutral-900 ring-2 ring-neutral-700 rounded-2xl sm:p-8  h-[500px]" 
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       <motion.h2
         variants={itemVariants}
-        className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8" 
+        className="mb-6 text-2xl font-bold sm:text-3xl sm:mb-8" 
       >
         <span className="text-white"> Contact </span>
         <span className="text-gray-500">Info -</span>
@@ -70,7 +70,7 @@ export default function ContactInfo() {
             <div className="p-3 sm:p-4 rounded-2xl bg-neutral-800">
               {" "}
               {/* Added responsive padding */}
-              <h4 className="text-gray-400 mb-1 sm:mb-2 text-sm sm:text-md">
+              <h4 className="mb-1 text-sm text-gray-400 sm:mb-2 sm:text-md">
                 {item.title}
               </h4>{" "}
               {/* Added responsive margin and font size */}
@@ -82,7 +82,7 @@ export default function ContactInfo() {
                   initial="initial"
                   whileHover="hover"
                 >
-                  <item.icon className="text-gray-500 hover:text-white w-5 h-5 sm:w-6 sm:h-6" />{" "}
+                  <item.icon className="w-5 h-5 text-gray-500 hover:text-white sm:w-6 sm:h-6" />{" "}
                   {/* Added responsive icon size */}
                 </motion.div>
                 <motion.div
@@ -90,7 +90,7 @@ export default function ContactInfo() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * (index + 1) }}
                 >
-                  <p className="text-gray-500 hover:text-white text-sm lg:text-md">
+                  <p className="text-sm text-gray-500 hover:text-white lg:text-md">
                     {" "}
                     {/* Added responsive font size */}
                     {item.content}

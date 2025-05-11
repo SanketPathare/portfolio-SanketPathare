@@ -46,13 +46,13 @@ export default function Contact() {
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="min-h-screen text-white"
+      className="text-white "
     >
       <motion.div
         variants={containerVariants}
-        className="pt-20 px-4 max-w-7xl mx-auto"
+        className="px-4 mx-auto my-10 max-w-7xl"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-12 md:ml-8 md:mr-8 sm:px-4 px-1">
+        <div className="grid grid-cols-1 gap-12 px-1 py-12 md:grid-cols-2 md:ml-8 md:mr-8 sm:px-4">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -74,7 +74,7 @@ export default function Contact() {
               delay: 0.4,
             
             }}
-            className=" rounded-2xl border border-black ring-2 ring-neutral-700"
+            className="border border-black rounded-2xl ring-2 ring-neutral-700"
           >
             <ContactForm />
           </motion.div>
