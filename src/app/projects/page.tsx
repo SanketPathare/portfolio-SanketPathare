@@ -151,7 +151,6 @@ const cardVariants = {
 export default function Projects() {
   return (
     <>
-   
       <motion.div
         initial="initial"
         animate="in"
@@ -164,13 +163,12 @@ export default function Projects() {
               <motion.h1 variants={cardVariants} className="text-4xl font-bold">
                 ALL PROJECTS
               </motion.h1>
-              <motion.div
-                variants={cardVariants}
-                className="flex gap-2 hidden sm:block"
-              >
-                <span className="text-neutral-400 ">LATEST WORK AND</span>
-                <span className="text-white ml-1">FEATURED</span>
-              </motion.div>
+              <div className="hidden sm:block">
+                <motion.div variants={cardVariants} className="flex gap-2 ">
+                  <span className="text-neutral-400 ">LATEST WORK AND</span>
+                  <span className="text-white ml-1">FEATURED</span>
+                </motion.div>
+              </div>
             </div>
             <motion.div
               variants={pageVariants}
@@ -191,7 +189,6 @@ export default function Projects() {
           </div>
         </main>
       </motion.div>
-    
     </>
   );
 }
