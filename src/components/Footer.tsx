@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bottom-0 py-4 mx-auto mb-4 border border-black rounded-lg bg-neutral-900 sm:mx-17 ring-2 ring-neutral-700">
+    <footer className="bottom-0 py-4 mx-6 mb-4 border border-black rounded-lg bg-neutral-900 sm:mx-17 ring-2 ring-neutral-700">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col items-center justify-between md:flex-row">
           <div className="mb-6 md:mb-0">
@@ -12,7 +12,7 @@ const Footer = () => {
               href="/"
               className="text-2xl font-bold text-white transition-colors hover:text-neutral-300"
             >
-              SP
+              S<span className="text-neutral-600">P</span>
             </Link>
           </div>
           <div className="text-base text-center text-neutral-400">

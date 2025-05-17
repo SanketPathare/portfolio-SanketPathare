@@ -151,7 +151,7 @@ const cardVariants = {
 export default function Projects() {
   return (
     <>
-      <Navbar />
+   
       <motion.div
         initial="initial"
         animate="in"
@@ -191,7 +191,7 @@ export default function Projects() {
           </div>
         </main>
       </motion.div>
-      <Footer />
+    
     </>
   );
 }

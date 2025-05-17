@@ -1,9 +1,8 @@
 import Link from "next/link";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="top-0 z-50 mt-4 ml-6 mr-6 border border-black rounded-lg bg-neutral-900 bg-neutral-900backdrop-blur-sm ring-2 ring-neutral-700">
-    {/* <nav className="fixed top-0 z-50 w-full bg-black/40 backdrop-blur-sm max-w-7xl"> */}
+    <nav className="top-0 z-50 mt-4 mx-6 border border-black rounded-lg bg-neutral-900  backdrop-blur-sm ring-2 ring-neutral-700">
       <div className="container flex items-center justify-between px-4 py-4 mx-auto ">
         <Link href="/" className="text-3xl font-bold ">
           S<span className="text-neutral-600">P</span>
@@ -39,7 +38,5 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
-
-
-
+};
+export default Navbar;

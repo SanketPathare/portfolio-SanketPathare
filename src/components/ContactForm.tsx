@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Toaster, toast } from "sonner";
-
-export default function ContactForm() {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -172,4 +171,5 @@ export default function ContactForm() {
       </div>
     </motion.div>
   );
-}
+};
+export default ContactForm;

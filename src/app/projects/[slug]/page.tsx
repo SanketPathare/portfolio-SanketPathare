@@ -17,18 +17,18 @@ export default async function ProjectPage({
   if (!project) {
     return (
       <>
-        <Navbar />
+      
         <div className="flex justify-center items-center h-screen text-2xl text-gray-400">
           Project not found...
         </div>
-        <Footer />
+       
       </>
     );
   }
 
   return (
     <>
-      <Navbar />
+   
       <main className="min-h-screen pt-16 md:pt-24 pb-8 md:pb-12 px-4 md:px-8">
         <div className="container mx-auto">
           <Link
@@ -126,7 +126,6 @@ export default async function ProjectPage({
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

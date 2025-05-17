@@ -3,7 +3,7 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function ContactInfo() {
+const ContactInfo = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -50,14 +50,14 @@ export default function ContactInfo() {
 
   return (
     <motion.div
-      className="p-4 text-white border border-black bg-neutral-900 ring-2 ring-neutral-700 rounded-2xl sm:p-8  h-[500px]" 
+      className="p-4 text-white border border-black bg-neutral-900 ring-2 ring-neutral-700 rounded-2xl sm:p-8  h-[500px]"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       <motion.h2
         variants={itemVariants}
-        className="mb-6 text-2xl font-bold sm:text-3xl sm:mb-8" 
+        className="mb-6 text-2xl font-bold sm:text-3xl sm:mb-8"
       >
         <span className="text-white"> Contact </span>
         <span className="text-gray-500">Info -</span>
@@ -103,4 +103,5 @@ export default function ContactInfo() {
       </div>
     </motion.div>
   );
-}
+};
+export default ContactInfo;

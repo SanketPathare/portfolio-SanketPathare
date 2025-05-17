@@ -40,7 +40,7 @@ export default function Contact() {
 
   return (
     <>  
-      <Navbar />
+
     <motion.main
       initial="initial"
       animate="in"
@@ -82,7 +82,7 @@ export default function Contact() {
       </motion.div>
 
     </motion.main>
-      <Footer />
+    
     </>
   );
 }

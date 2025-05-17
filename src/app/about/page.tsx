@@ -149,7 +149,7 @@ const Page = () => {
 
   return (
     <>
-      <Navbar />
+    
       <motion.main
         className="min-h-screen pt-16 sm:pt-24 pb-8 sm:pb-12 mx-4 sm:mx-8"
         initial="hidden"
@@ -311,7 +311,7 @@ const Page = () => {
           </div>
         </div>
       </motion.main>
-      <Footer />
+ 
     </>
   );
 };

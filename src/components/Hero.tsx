@@ -1,18 +1,22 @@
 "use client";
+
 import React from "react";
+import dynamic from "next/dynamic"; // For SSR-safe Tilt
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import Image from "next/image";
 import { MdEmail } from "react-icons/md";
-import Tilt from "react-parallax-tilt";
 import { GoDotFill } from "react-icons/go";
 import { Icon } from "@iconify/react";
-import ProjectSlidershow from "./ProjectSlidershow";
-import { image } from "../../public/image";
-import NumberTicker from "@/components/ui/number-ticker";
 import Link from "next/link";
+
+import ProjectSlidershow from "./ProjectSlidershow";
+import NumberTicker from "@/components/ui/number-ticker";
+import { image } from "../../public/image";
+
+const Tilt = dynamic(() => import("react-parallax-tilt"), { ssr: false });
 
 const AvatarImg = image.AvatarImg;
 
@@ -28,25 +32,17 @@ const Hero = () => {
   };
 
   const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-    },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   const hoverScale = {
     scale: 1.02,
-    transition: {
-      duration: 0.2,
-    },
+    transition: { duration: 0.2 },
   };
 
   return (
@@ -56,9 +52,9 @@ const Hero = () => {
       animate="visible"
       variants={containerVariants}
     >
-      {/* Grid Layout */}
+      {/* GRID */}
       <div className="grid grid-cols-1 gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3">
-        {/* Profile Card */}
+        {/* PROFILE CARD */}
         <motion.div
           className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
@@ -75,7 +71,7 @@ const Hero = () => {
               width={300}
               height={300}
               className="mx-auto mb-4 rounded-lg bg-neutral-900"
-              priority // Added priority for faster loading
+              priority
             />
           </motion.div>
           <div className="text-center">
@@ -106,14 +102,14 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Credentials Card */}
+        {/* CREDENTIALS CARD */}
         <motion.div
           className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
           whileHover={hoverScale}
         >
           <div className="mb-2 text-gray-400">MORE ABOUT ME</div>
-          <h2 className="text-xl font-bold sm:text-2xl ">Credentials</h2>
+          <h2 className="text-xl font-bold sm:text-2xl">Credentials</h2>
           <div className="flex items-center justify-center">
             <Tilt
               className="background-stripes parallax-effect-glare-scale"
@@ -129,52 +125,55 @@ const Hero = () => {
                 width={170}
                 height={200}
                 className="filter grayscale hover:grayscale-0 hover:shadow-white hover:shadow-3xl"
-                priority // Added priority for faster loading
+                priority
               />
             </Tilt>
           </div>
-          <div className="flex flex-col items-center justify-center w-full max-w-2xl gap-4 p-4 mx-auto sm:flex-row">
-            {/* Resume Download Button */}
-            <button className="relative flex items-center justify-center w-full h-12 overflow-hidden transition-all duration-300 bg-black border-2 rounded-lg cursor-pointer sm:w-40 group hover:bg-neutral-800 border-neutral-700 active:border-neutral-700">
-              <span className="flex items-center justify-center gap-3 text-sm text-white transition-all duration-300 transform group-hover:opacity-0">
-                Resume <Icon icon="material-symbols:download" width="20" />
-              </span>
-              <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
-                <a href="/SanketPathare_ Resume.pdf" download={true}>
-                  <Icon icon="material-symbols:download" width="20" />
-                </a>
-              </span>
-            </button>
 
-            {/* Contact Button */}
+          {/* Buttons */}
+          <div className="flex flex-col items-center justify-center w-full max-w-2xl gap-4 p-4 mx-auto sm:flex-row">
+            <a
+              href="/SanketPathare_ Resume.pdf"
+              download
+              className="relative w-full sm:w-40"
+            >
+              <button className="relative flex items-center justify-center w-full h-12 overflow-hidden transition-all duration-300 bg-[#101010] text border-2 rounded-lg cursor-pointer group hover:bg-neutral-800 border-neutral-700 active:border-neutral-700">
+                <span className="flex items-center justify-center gap-3 text-sm text-white transition-all duration-300 transform group-hover:opacity-0">
+                  Resume <Icon icon="material-symbols:download" width="20" />
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
+                  <Icon icon="material-symbols:download" width="20" />
+                </span>
+              </button>
+            </a>
+
             <a
               href="mailto:sanketpathare8808@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-40"
             >
-              <button className="flex items-center justify-center w-full h-12 gap-3 text-white transition-all duration-300 bg-black border-2 rounded-lg cursor-pointer border-neutral-700 hover:bg-neutral-800">
+              <button className="flex items-center justify-center w-full h-12 gap-3 text-white transition-all duration-300 bg-[#101010] border-2 rounded-lg cursor-pointer border-neutral-700 hover:bg-neutral-800">
                 <span className="text-sm">Contact</span>
                 <Icon icon="mdi:contact" width="20" height="20" />
               </button>
             </a>
           </div>
 
-          <br />
           <motion.button
-            className="float-right text-gray-400 hover:text-white "
+            className="float-right text-gray-400 hover:text-white"
             whileHover={{ scale: 1.1, rotate: 90 }}
             whileTap={{ scale: 0.9 }}
           >
-            <Link href={"/about"}>
+            <Link href="/about">
               <FaCircleArrowRight size={30} />
             </Link>
           </motion.button>
         </motion.div>
 
-        {/* Marquee Section */}
+        {/* MARQUEE + PROJECTS */}
         <motion.div variants={cardVariants}>
-          <div className="flex items-center justify-center w-full ">
+          <div className="flex items-center justify-center w-full">
             <motion.div
               className="hidden p-2 text-sm text-gray-400 border border-black rounded-lg sm:block ring-2 ring-neutral-700"
               whileHover={{ borderColor: "#151515" }}
@@ -192,7 +191,6 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Showcase Card */}
           <motion.div
             className="bg-neutral-900 rounded-2xl p-4 sm:p-6 h-[395px] mt-4  border border-black ring-2 ring-neutral-700"
             variants={cardVariants}
@@ -200,7 +198,7 @@ const Hero = () => {
           >
             <div className="mb-2 text-gray-400">SHOWCASE</div>
             <h2 className="mb-4 text-xl font-bold sm:text-2xl">Projects</h2>
-            <Link href={"/projects"}>
+            <Link href="/projects">
               <div className="flex items-center justify-center mb-6">
                 <ProjectSlidershow />
               </div>
@@ -210,14 +208,14 @@ const Hero = () => {
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Link href={"/projects"}>
+              <Link href="/projects">
                 <FaCircleArrowRight size={30} />
               </Link>
             </motion.button>
           </motion.div>
         </motion.div>
 
-        {/* Contact Card */}
+        {/* CONTACT CARD */}
         <motion.div
           className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
@@ -234,12 +232,12 @@ const Hero = () => {
               },
               {
                 icon: <FaLinkedin size={28} />,
-                text: "Linkedin",
+                text: "LinkedIn",
                 href: "https://www.linkedin.com/in/sanket-pathare-740703245/",
               },
               {
                 icon: <FaGithub size={28} />,
-                text: "Github",
+                text: "GitHub",
                 href: "https://github.com/SanketPathare",
               },
             ].map((item, index) => (
@@ -247,6 +245,7 @@ const Hero = () => {
                 key={index}
                 href={item.href}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-gray-400 hover:text-white"
                 whileHover={{ x: 10 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -258,7 +257,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Services Card */}
+        {/* SERVICES */}
         <motion.div
           className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
@@ -269,7 +268,6 @@ const Hero = () => {
             Services Offering
           </h2>
           <div className="grid grid-cols-2 gap-4 mb-6 sm:grid-cols-2">
-            {" "}
             {[
               {
                 icon: (
@@ -309,9 +307,9 @@ const Hero = () => {
                 className="p-4 border-2 rounded-lg bg-neutral-800/50 border-neutral-700"
                 whileHover={{ scale: 1.05, backgroundColor: "#404040" }}
               >
-                <h1 className="flex items-center justify-center mb-2 ">
+                <div className="flex items-center justify-center mb-2">
                   {service.icon}
-                </h1>
+                </div>
                 <h2 className="flex items-center justify-center text-sm text-gray-400 hover:text-white">
                   {service.text}
                 </h2>
@@ -320,7 +318,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Social Profiles Card */}
+        {/* SOCIAL ICONS */}
         <motion.div
           className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
@@ -335,44 +333,26 @@ const Hero = () => {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
               {[
-                {
-                  icon: (
-                    <Link
-                      href="https://www.linkedin.com/in/sanket-pathare-740703245/"
-                      target="_blank"
-                    >
-                      <FaLinkedin className="w-8 h-8" />
-                    </Link>
-                  ),
-                },
-                {
-                  icon: (
-                    <Link
-                      href="https://github.com/SanketPathare"
-                      target="_blank"
-                    >
-                      <FaGithub className="w-8 h-8" />
-                    </Link>
-                  ),
-                },
-                {
-                  icon: (
-                    <Link
-                      href="mailto:sanketpathare8808@gmail.com"
-                      target="_blank"
-                    >
-                      <MdEmail className="w-8 h-8" />
-                    </Link>
-                  ),
-                },
-              ].map((item, index) => (
+                <Link
+                  href="https://www.linkedin.com/in/sanket-pathare-740703245/"
+                  target="_blank"
+                >
+                  <FaLinkedin className="w-8 h-8" />
+                </Link>,
+                <Link href="https://github.com/SanketPathare" target="_blank">
+                  <FaGithub className="w-8 h-8" />
+                </Link>,
+                <Link href="mailto:sanketpathare8808@gmail.com" target="_blank">
+                  <MdEmail className="w-8 h-8" />
+                </Link>,
+              ].map((icon, index) => (
                 <motion.div
                   key={index}
                   className="p-4 bg-gray-700 rounded-full hover:bg-gray-600"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  {item.icon}
+                  {icon}
                 </motion.div>
               ))}
             </motion.div>
@@ -380,16 +360,14 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Stats Section */}
-      <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 ">
+      {/* STATS + CTA */}
+      <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2">
         <motion.div
           className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="grid grid-cols-3 gap-4 sm:grid-cols-3">
-            {" "}
-            {/* Adjust grid for smaller screens */}
+          <div className="grid grid-cols-3 gap-4 ">
             {[
               {
                 number: <NumberTicker value={3} className="text-white" />,
@@ -410,7 +388,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
               >
-                <div className="mb-2 text-3xl font-bold sm:text-4xl">
+                <div className="mb-2 text-3xl font-bold sm:text-4xl ">
                   +{stat.number}
                 </div>
                 <div className="text-xs text-gray-400 whitespace-pre-line sm:text-sm">
@@ -420,7 +398,7 @@ const Hero = () => {
             ))}
           </div>
         </motion.div>
-        {/* work together */}
+
         <motion.div
           className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
           variants={cardVariants}
@@ -428,8 +406,7 @@ const Hero = () => {
         >
           <div className="flex items-center justify-between">
             <h2 className="mb-2 text-3xl font-bold sm:text-4xl">
-              Let&apos;s
-              <br />
+              Let&apos;s <br />
               work <span className="text-gray-500">together</span>.
             </h2>
             <motion.button
@@ -437,7 +414,7 @@ const Hero = () => {
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Link href={"/contact"}>
+              <Link href="/contact">
                 <FaCircleArrowRight size={30} />
               </Link>
             </motion.button>
