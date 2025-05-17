@@ -330,45 +330,72 @@ const Hero = () => {
           <h2 className="mb-4 text-xl font-bold sm:text-2xl">Profiles</h2>
           <div className="flex items-center justify-center">
             <motion.div
-              className="flex items-center justify-center w-40 h-40 mb-6 space-x-4 border-4 border-white rounded-full"
-              animate={{ rotate: 0 }}
+              className="flex items-center justify-center w-40 h-40 mb-6 space-x-4 border-t-4  border-b-4 border-neutral-300 rounded-full"
+              animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
               {[
                 {
                   icon: (
-                    <Link
-                      href="https://www.linkedin.com/in/sanket-pathare-740703245/"
-                      target="_blank"
+                    <motion.div
+                      animate={{ rotate: -360 }}
+                      transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
-                      <FaLinkedin className="w-8 h-8" />
-                    </Link>
+                      <Link
+                        href="https://www.linkedin.com/in/sanket-pathare-740703245/"
+                        target="_blank"
+                      >
+                        <FaLinkedin className="w-7 h-7" />
+                      </Link>
+                    </motion.div>
                   ),
                 },
                 {
                   icon: (
-                    <Link
-                      href="https://github.com/SanketPathare"
-                      target="_blank"
+                    <motion.div
+                      animate={{ rotate: -360 }}
+                      transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
-                      <FaGithub className="w-8 h-8" />
-                    </Link>
+                      <Link
+                        href="https://github.com/SanketPathare"
+                        target="_blank"
+                      >
+                        <FaGithub className="w-7 h-7" />
+                      </Link>
+                    </motion.div>
                   ),
                 },
                 {
                   icon: (
-                    <Link
-                      href="mailto:sanketpathare8808@gmail.com"
-                      target="_blank"
+                    <motion.div
+                      animate={{ rotate: -360 }}
+                      transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
-                      <MdEmail className="w-8 h-8" />
-                    </Link>
+                      <Link
+                        href="mailto:sanketpathare8808@gmail.com"
+                        target="_blank"
+                      >
+                        <MdEmail className="w-7 h-7" />
+                      </Link>
+                    </motion.div>
                   ),
                 },
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  className="p-4 bg-gray-700 rounded-full hover:bg-gray-600"
+                  className="p-4 bg-neutral-700 rounded-full hover:bg-neutral-600"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
