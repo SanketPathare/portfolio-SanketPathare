@@ -10,6 +10,18 @@ export default {
   theme: {
   	extend: {
   		colors: {
+  			mono: {
+  				primary: '#09090B',
+  				secondary: '#71717A',
+  				tertiary: '#A1A1AA',
+  				neutral: '#FFFFFF',
+  				surface: '#FFFFFF',
+  				'on-surface': '#09090B',
+  				error: '#EF4444',
+  				accent: '#18181B',
+  				border: '#E4E4E7',
+  				muted: '#D4D4D8',
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -52,6 +64,7 @@ export default {
   			}
   		},
   		borderRadius: {
+  			xl: '24px',
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'

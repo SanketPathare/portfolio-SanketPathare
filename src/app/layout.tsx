@@ -1,19 +1,13 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import DotPattern from "@/components/ui/dot-pattern";
-import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
-import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-// import DotPattern from "@/components/ui/dot-pattern";
-// import { cn } from "@/lib/utils";
-// import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
-  title: "Sanket Pathare",
-  description: "Personal Portfolio Website",
+  title: "Sanket Pathare | Web Developer",
+  description: "Personal Portfolio Website of Sanket Pathare - Web Developer",
 };
 
 export default function RootLayout({
@@ -22,14 +16,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body
-        className={`${inter.className} bg-[#101010] text-white antialiased max-w-[85rem] mx-auto dark:bg-darkMode dark:text-white transition-colors
-        duration-200 ease-in-out `}
+        className={`${inter.className} bg-[#FFFFFF] text-[#09090B] antialiased selection:bg-[#18181B] selection:text-white flex flex-col min-h-screen`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col">
+          <Navbar />
+          <div className="flex-1">
+            {children}
+          </div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

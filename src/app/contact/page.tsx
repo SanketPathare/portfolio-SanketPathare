@@ -1,29 +1,26 @@
 "use client";
-import Navbar from "@/components/Navbar";
+
 import ContactForm from "@/components/ContactForm";
 import ContactInfo from "@/components/ContactInfo";
-import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 export default function Contact() {
   const pageVariants = {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 16 },
     in: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeOut",
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
     out: {
       opacity: 0,
-      y: -20,
+      y: -16,
       transition: {
-        duration: 0.6,
-        ease: "easeIn",
+        duration: 0.3,
       },
     },
   };
@@ -33,56 +30,54 @@ export default function Contact() {
     in: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
   };
 
   return (
-    <>  
-
     <motion.main
       initial="initial"
       animate="in"
       exit="out"
       variants={pageVariants}
-      className="text-white "
+      className="min-h-screen pt-4 pb-12"
     >
-      <motion.div
-        variants={containerVariants}
-        className="px-4 mx-auto my-10 max-w-7xl"
-      >
-        <div className="grid grid-cols-1 gap-12 px-1 py-12 md:grid-cols-2 md:ml-8 md:mr-8 sm:px-4">
+      <motion.div variants={containerVariants} className="w-full">
+        {/* Header */}
+        <div className="mb-10 text-center sm:text-left">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-[#E4E4E7] bg-white text-xs font-semibold tracking-widest uppercase text-[#71717A]">
+            GET IN TOUCH
+          </div>
+          <h1 className="headline-lg tracking-tight text-[#09090B]">
+            LET&apos;S <span className="text-[#71717A]">CONNECT</span>
+          </h1>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
-              type: "spring",
-              stiffness: 100,
-              delay: 0.2,
+              duration: 0.5,
+              ease: "easeOut",
             }}
           >
             <ContactInfo />
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
-              type: "spring",
-              stiffness: 100,
-              delay: 0.4,
-            
+              duration: 0.5,
+              ease: "easeOut",
             }}
-            className="border border-black rounded-2xl ring-2 ring-neutral-700"
           >
             <ContactForm />
           </motion.div>
         </div>
       </motion.div>
-
     </motion.main>
-    
-    </>
   );
 }

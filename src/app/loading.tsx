@@ -1,9 +1,11 @@
 export default function Loading() {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-sm">
       <div className="flex flex-col items-center">
-        <div className="w-12 h-12 border-4 border-neutral-600 border-t-gray-400 rounded-full animate-spin"></div>
-        <p className="mt-4 text-neutral-400">Loading...</p>
+        <div className="w-10 h-10 border-2 border-[#E4E4E7] border-t-[#09090B] rounded-full animate-spin"></div>
+        <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-[#71717A]">
+          Loading...
+        </p>
       </div>
     </div>
   );

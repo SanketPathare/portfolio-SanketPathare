@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaCircleArrowRight } from "react-icons/fa6";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa6";
 
 interface ProjectCardProps {
   title: string;
@@ -8,6 +9,7 @@ interface ProjectCardProps {
   image: string;
   slug: string;
 }
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   category,
@@ -15,55 +17,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   slug,
 }) => {
   return (
-    <a href={`/projects/${slug}`} className="block no-underline">
+    <Link href={`/projects/${slug}`} className="block group">
       <motion.div
-        className="bg-neutral-900 rounded-2xl overflow-hidden border-2 border-neutral-700"
-        whileHover={{
-          y: -8,
-          transition: { duration: 0.3 },
-        }}
+        className="bg-white border border-[#E4E4E7] rounded-3xl p-4 sm:p-5 flex flex-col justify-between hover:border-[#09090B] hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300"
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.2 }}
       >
-        <motion.div
-          className="relative h-48 md:h-64 rounded-2xl  "
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
-        >
+        <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden border border-[#E4E4E7] bg-[#FAFAFA] mb-4">
           <Image
             src={image}
             alt={title}
             fill
-            style={{ objectFit: "fill" }}
-            className="group-hover:scale-105 transition duration-300 p-1 rounded-2xl"
+            style={{ objectFit: "cover" }}
+            className="group-hover:scale-105 transition-transform duration-500"
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="p-4"
-          initial={{ opacity: 0.8 }}
-          whileHover={{ opacity: 1 }}
-          transition={{ duration: 0.2 }}
-        >
-          <p className="text-sm text-neutral-400 uppercase tracking-wider">
+        <div className="px-2 pb-1">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#71717A] mb-1">
             {category}
           </p>
-          <div className="flex justify-between items-center mt-2">
-            <motion.h3
-              className="text-lg font-semibold"
-              whileHover={{ x: 4 }}
-              transition={{ duration: 0.2 }}
-            >
+          <div className="flex justify-between items-center mt-1">
+            <h3 className="text-base sm:text-lg font-bold text-[#09090B] group-hover:text-[#18181B] transition-colors">
               {title}
-            </motion.h3>
-            <motion.div>
-              {/* Simple arrow icon using HTML entities */}
-              <span className="text-gray-400 hover:text-white text-2xl">
-                <FaCircleArrowRight size={30} />
-              </span>
-            </motion.div>
+            </h3>
+            <span className="w-9 h-9 rounded-full border border-[#E4E4E7] bg-white flex items-center justify-center text-[#71717A] group-hover:text-white group-hover:bg-[#18181B] group-hover:border-[#18181B] transition-all">
+              <FaArrowRight size={13} />
+            </span>
           </div>
-        </motion.div>
+        </div>
       </motion.div>
-    </a>
+    </Link>
   );
 };
 

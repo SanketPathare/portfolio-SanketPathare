@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Toaster, toast } from "sonner";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -32,9 +33,7 @@ const ContactForm = () => {
       const data = await response.json();
 
       if (data.success) {
-        // Show success message
-        toast.success("Message sent successfully");
-        // Reset the form
+        toast.success("Message sent successfully!");
         setFormData({
           name: "",
           email: "",
@@ -65,20 +64,20 @@ const ContactForm = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
+        delayChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 16, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        stiffness: 100,
+        duration: 0.4,
+        ease: "easeOut",
       },
     },
   };
@@ -88,21 +87,24 @@ const ContactForm = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="p-3 rounded sm:p-8"
+      className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
     >
       <div>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-4 rounded-full border border-[#E4E4E7] bg-[#FAFAFA] text-xs font-semibold tracking-widest uppercase text-[#71717A]">
+          SEND A MESSAGE
+        </div>
+
         <motion.h2
           variants={itemVariants}
-          className="mb-6 text-2xl font-bold sm:text-3xl"
+          className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] mb-8"
         >
-          <span className="text-white">Let&apos;s Work </span>
-          <span className="text-gray-500">Together.</span>
+          Let&apos;s Work <span className="text-[#71717A]">Together.</span>
         </motion.h2>
 
         <motion.form
           onSubmit={handleSubmit}
           variants={containerVariants}
-          className="space-y-4 sm:space-y-6"
+          className="space-y-4 sm:space-y-5"
         >
           {/* Honeypot field to prevent spam */}
           <input
@@ -116,8 +118,8 @@ const ContactForm = () => {
             <input
               type="text"
               name="name"
-              placeholder="Name *"
-              className="w-full p-2 text-white rounded-md bg-neutral-800 sm:p-3"
+              placeholder="Your Name *"
+              className="w-full px-5 py-3.5 text-sm sm:text-base text-[#09090B] bg-white border border-[#E4E4E7] rounded-full focus:border-[#09090B] focus:ring-1 focus:ring-[#09090B] focus:outline-none transition-all placeholder:text-[#A1A1AA]"
               required
               value={formData.name}
               onChange={handleChange}
@@ -128,19 +130,20 @@ const ContactForm = () => {
             <input
               type="email"
               name="email"
-              placeholder="Email *"
-              className="w-full p-2 text-white rounded-md bg-neutral-800 sm:p-3"
+              placeholder="Your Email *"
+              className="w-full px-5 py-3.5 text-sm sm:text-base text-[#09090B] bg-white border border-[#E4E4E7] rounded-full focus:border-[#09090B] focus:ring-1 focus:ring-[#09090B] focus:outline-none transition-all placeholder:text-[#A1A1AA]"
               required
               value={formData.email}
               onChange={handleChange}
             />
           </motion.div>
+
           <motion.div variants={itemVariants}>
             <textarea
               name="message"
               placeholder="Your Message *"
-              rows={4}
-              className="w-full p-2 text-white rounded-md bg-neutral-800 sm:p-3"
+              rows={5}
+              className="w-full p-5 text-sm sm:text-base text-[#09090B] bg-white border border-[#E4E4E7] rounded-3xl focus:border-[#09090B] focus:ring-1 focus:ring-[#09090B] focus:outline-none transition-all placeholder:text-[#A1A1AA] resize-none"
               required
               value={formData.message}
               onChange={handleChange}
@@ -151,7 +154,7 @@ const ContactForm = () => {
             variants={itemVariants}
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 text-white transition rounded-md bg-neutral-800 sm:py-4 hover:bg-neutral-700 disabled:opacity-70"
+            className="w-full h-[45px] text-sm font-medium text-white bg-[#18181B] rounded-full hover:bg-[#27272A] disabled:opacity-60 transition-all shadow-sm flex items-center justify-center cursor-pointer"
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </motion.button>
@@ -161,9 +164,10 @@ const ContactForm = () => {
           position="top-right"
           toastOptions={{
             style: {
-              background: "#333",
-              color: "#fff",
-              border: "1px solid #444",
+              background: "#09090B",
+              color: "#FFFFFF",
+              border: "1px solid #27272A",
+              borderRadius: "9999px",
             },
             duration: 4000,
           }}
@@ -172,4 +176,5 @@ const ContactForm = () => {
     </motion.div>
   );
 };
+
 export default ContactForm;

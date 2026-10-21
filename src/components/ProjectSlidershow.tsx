@@ -38,19 +38,20 @@ const ProjectSlidershow = () => {
   return (
     <div className="relative flex items-center justify-center w-full max-w-2xl p-2 mx-auto overflow-hidden">
       {/* Image container */}
-      <div className="relative h-[210px] w-[400px] object-cover  border-4 border-neutral-700 rounded-lg">
+      <div className="relative h-[210px] w-full max-w-[380px] border border-[#E4E4E7] rounded-2xl overflow-hidden bg-[#FAFAFA] shadow-sm">
         {images.map((image, index) => (
           <div
             key={image.id}
-            className={`absolute w-full h-full transition-opacity duration-500 ease-in-out
-    ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
           >
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              style={{ objectFit: "fill" }}
-              className="object-contain p-1 "
+              style={{ objectFit: "cover" }}
+              className="p-1 rounded-2xl"
             />
           </div>
         ))}

@@ -1,9 +1,10 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { FaCircleArrowRight } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
 import { MdEmail } from "react-icons/md";
 import Tilt from "react-parallax-tilt";
@@ -22,7 +23,7 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -30,445 +31,439 @@ const Hero = () => {
   const cardVariants = {
     hidden: {
       opacity: 0,
-      y: 20,
+      y: 16,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeOut",
       },
     },
   };
 
   const hoverScale = {
-    scale: 1.02,
+    y: -4,
     transition: {
       duration: 0.2,
+      ease: "easeOut",
     },
   };
 
   return (
     <motion.div
-      className="p-4 text-white sm:p-8"
+      className="w-full text-[#09090B] pb-12"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
+      {/* Top Editorial Identity / Name Lockup */}
+      <motion.div variants={cardVariants} className="pt-6 pb-10 text-center sm:text-left">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-[#E4E4E7] bg-white text-xs font-semibold tracking-widest uppercase text-[#71717A]">
+          <span className="w-2 h-2 rounded-full bg-[#18181B] animate-ping" />
+          A WEB DEVELOPER
+        </div>
+        <h1 className="headline-display mb-3">
+          Sanket <span className="text-[#71717A]">Pathare.</span>
+        </h1>
+        <p className="body-lg max-w-2xl text-[#71717A]">
+          I am a Web Developer from India crafting responsive, high-performance digital experiences and thoughtful web interfaces.
+        </p>
+      </motion.div>
+
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {/* Profile Card */}
         <motion.div
-          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
+          className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              src={AvatarImg}
-              alt="Profile Avatar"
-              width={300}
-              height={300}
-              className="mx-auto mb-4 rounded-lg bg-neutral-900"
-              priority // Added priority for faster loading
-            />
-          </motion.div>
-          <div className="text-center">
-            <motion.div
-              className="mb-2 text-gray-400"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
+          <div>
+            <div className="overflow-hidden rounded-2xl border border-[#E4E4E7] bg-[#FAFAFA] mb-6">
+              <Image
+                src={AvatarImg}
+                alt="Profile Avatar"
+                width={300}
+                height={300}
+                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                priority
+              />
+            </div>
+            <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
               A WEB DEVELOPER
-            </motion.div>
-            <motion.h1
-              className="mb-4 text-2xl font-bold sm:text-3xl"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              Sanket Pathare.
-            </motion.h1>
-            <motion.p
-              className="mb-6 text-gray-400"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] mb-2">
+              Sanket <span className="text-[#71717A]">Pathare.</span>
+            </h2>
+            <p className="text-sm sm:text-base text-[#71717A] leading-relaxed">
               I am a Web Developer from India.
-            </motion.p>
+            </p>
+          </div>
+          <div className="pt-6 mt-4 border-t border-[#E4E4E7] flex justify-between items-center">
+            <span className="text-xs font-medium text-[#A1A1AA]">About Profile</span>
+            <Link
+              href="/about"
+              className="w-10 h-10 rounded-full border border-[#E4E4E7] flex items-center justify-center text-[#71717A] hover:text-white hover:bg-[#18181B] hover:border-[#18181B] transition-all"
+              aria-label="View About"
+            >
+              <FaArrowRight size={14} />
+            </Link>
           </div>
         </motion.div>
 
         {/* Credentials Card */}
         <motion.div
-          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
+          className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="mb-2 text-gray-400">MORE ABOUT ME</div>
-          <h2 className="text-xl font-bold sm:text-2xl ">Credentials</h2>
-          <div className="flex items-center justify-center">
-            <Tilt
-              className="background-stripes parallax-effect-glare-scale"
-              perspective={500}
-              glareEnable={true}
-              glareMaxOpacity={0.45}
-              scale={1.02}
-              glareColor="black"
-            >
-              <Image
-                src="https://uiverse.io/astronaut.png"
-                alt="img"
-                width={170}
-                height={200}
-                className="filter grayscale hover:grayscale-0 hover:shadow-white hover:shadow-3xl"
-                priority // Added priority for faster loading
-              />
-            </Tilt>
-          </div>
-          <div className="flex flex-col items-center justify-center w-full max-w-2xl gap-4 p-4 mx-auto sm:flex-row">
-            {/* Resume Download Button */}
-            <button className="relative flex items-center justify-center w-full h-12 overflow-hidden transition-all duration-300 bg-[#101010] text border-2 rounded-lg cursor-pointer sm:w-40 group hover:bg-neutral-800 border-neutral-700 active:border-neutral-700">
-              <span className="flex items-center justify-center gap-3 text-sm text-white transition-all duration-300 transform group-hover:opacity-0">
-                Resume <Icon icon="material-symbols:download" width="20" />
-              </span>
-              <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
-                <a href="/SanketPathare_ Resume.pdf" download={true}>
-                  <Icon icon="material-symbols:download" width="20" />
-                </a>
-              </span>
-            </button>
+          <div>
+            <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              MORE ABOUT ME
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] mb-4">
+              Credentials
+            </h2>
+            <div className="flex items-center justify-center py-4">
+              <Tilt
+                className="background-stripes parallax-effect-glare-scale"
+                perspective={500}
+                glareEnable={true}
+                glareMaxOpacity={0.2}
+                scale={1.02}
+                glareColor="#ffffff"
+              >
+                <Image
+                  src="https://uiverse.io/astronaut.png"
+                  alt="Credentials Illustration"
+                  width={160}
+                  height={190}
+                  className="filter grayscale hover:grayscale-0 transition duration-300"
+                  priority
+                />
+              </Tilt>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-3 mt-4">
+              {/* Resume Download Button */}
+              <a
+                href="/SanketPathare_ Resume.pdf"
+                download={true}
+                className="w-full sm:flex-1 btn-primary text-sm h-[43px]"
+              >
+                Resume
+                <Icon icon="material-symbols:download" width="18" />
+              </a>
 
-            {/* Contact Button */}
-            <a
-              href="mailto:sanketpathare8808@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-40"
-            >
-              <button className="flex items-center justify-center w-full h-12 gap-3 text-white transition-all duration-300 bg-[#101010] border-2 rounded-lg cursor-pointer border-neutral-700 hover:bg-neutral-800">
-                <span className="text-sm">Contact</span>
-                <Icon icon="mdi:contact" width="20" height="20" />
-              </button>
-            </a>
+              {/* Contact Button */}
+              <a
+                href="mailto:sanketpathare8808@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:flex-1 btn-secondary text-sm h-[43px]"
+              >
+                Contact
+                <Icon icon="mdi:contact" width="18" />
+              </a>
+            </div>
           </div>
-
-          <br />
-          <motion.button
-            className="float-right text-gray-400 hover:text-white "
-            whileHover={{ scale: 1.1, rotate: 90 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <Link href={"/about"}>
-              <FaCircleArrowRight size={30} />
+          <div className="pt-6 mt-4 border-t border-[#E4E4E7] flex justify-between items-center">
+            <span className="text-xs font-medium text-[#A1A1AA]">More Details</span>
+            <Link
+              href="/about"
+              className="w-10 h-10 rounded-full border border-[#E4E4E7] flex items-center justify-center text-[#71717A] hover:text-white hover:bg-[#18181B] hover:border-[#18181B] transition-all"
+              aria-label="View Credentials"
+            >
+              <FaArrowRight size={14} />
             </Link>
-          </motion.button>
+          </div>
         </motion.div>
 
-        {/* Marquee Section */}
-        <motion.div variants={cardVariants}>
-          <div className="flex items-center justify-center w-full ">
-            <motion.div
-              className="hidden p-2 text-sm text-gray-400 border border-black rounded-lg sm:block ring-2 ring-neutral-700"
-              whileHover={{ borderColor: "#151515" }}
-            >
-              <Marquee speed={30} gradient={false} pauseOnHover={true}>
-                <span className="flex mr-2 text-white">
-                  <GoDotFill />
-                </span>
+        {/* Showcase / Projects Card */}
+        <motion.div
+          className="flex flex-col gap-6"
+          variants={cardVariants}
+        >
+          {/* Marquee Pill */}
+          <div className="bg-white border border-[#E4E4E7] rounded-full py-2.5 px-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+            <Marquee speed={35} gradient={false} pauseOnHover={true}>
+              <span className="flex items-center text-xs font-semibold tracking-wider text-[#71717A] uppercase mr-3">
+                <GoDotFill className="text-[#09090B] mr-2" />
                 LATEST PROJECTS AND
-                <span className="ml-1 text-white">FEATURED</span>
-                <span className="flex ml-2 text-white">
-                  <GoDotFill />
-                </span>
-              </Marquee>
-            </motion.div>
+                <span className="ml-1 text-[#09090B] font-bold">FEATURED</span>
+                <GoDotFill className="text-[#09090B] ml-3 mr-2" />
+              </span>
+            </Marquee>
           </div>
 
           {/* Showcase Card */}
           <motion.div
-            className="bg-neutral-900 rounded-2xl p-4 sm:p-6 h-[395px] mt-4  border border-black ring-2 ring-neutral-700"
-            variants={cardVariants}
+            className="flex-1 bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
             whileHover={hoverScale}
           >
-            <div className="mb-2 text-gray-400">SHOWCASE</div>
-            <h2 className="mb-4 text-xl font-bold sm:text-2xl">Projects</h2>
-            <Link href={"/projects"}>
-              <div className="flex items-center justify-center mb-6">
-                <ProjectSlidershow />
+            <div>
+              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+                SHOWCASE
               </div>
-            </Link>
-            <motion.button
-              className="float-right text-gray-400 hover:text-white"
-              whileHover={{ scale: 1.1, rotate: 90 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Link href={"/projects"}>
-                <FaCircleArrowRight size={30} />
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] mb-4">
+                Projects
+              </h2>
+              <Link href="/projects" className="block my-2">
+                <ProjectSlidershow />
               </Link>
-            </motion.button>
+            </div>
+            <div className="pt-6 mt-4 border-t border-[#E4E4E7] flex justify-between items-center">
+              <span className="text-xs font-medium text-[#A1A1AA]">View All Works</span>
+              <Link
+                href="/projects"
+                className="w-10 h-10 rounded-full border border-[#E4E4E7] flex items-center justify-center text-[#71717A] hover:text-white hover:bg-[#18181B] hover:border-[#18181B] transition-all"
+                aria-label="View Projects"
+              >
+                <FaArrowRight size={14} />
+              </Link>
+            </div>
           </motion.div>
         </motion.div>
 
         {/* Contact Card */}
         <motion.div
-          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
+          className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="mb-2 text-gray-400">GET IN TOUCH</div>
-          <h2 className="mb-4 text-xl font-bold sm:text-2xl">Contact Me</h2>
-          <motion.div className="space-y-4">
-            {[
-              {
-                icon: <MdEmail size={28} />,
-                text: "sanketpathare8808@gmail.com",
-                href: "mailto:sanketpathare8808@gmail.com",
-              },
-              {
-                icon: <FaLinkedin size={28} />,
-                text: "Linkedin",
-                href: "https://www.linkedin.com/in/sanket-pathare-740703245/",
-              },
-              {
-                icon: <FaGithub size={28} />,
-                text: "Github",
-                href: "https://github.com/SanketPathare",
-              },
-            ].map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.href}
-                target="_blank"
-                className="flex items-center space-x-2 text-gray-400 hover:text-white"
-                whileHover={{ x: 10 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                {item.icon}
-                <span>{item.text}</span>
-              </motion.a>
-            ))}
-          </motion.div>
+          <div>
+            <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              GET IN TOUCH
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] mb-6">
+              Contact Me
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  icon: <MdEmail className="w-5 h-5" />,
+                  text: "sanketpathare8808@gmail.com",
+                  href: "mailto:sanketpathare8808@gmail.com",
+                },
+                {
+                  icon: <FaLinkedin className="w-5 h-5" />,
+                  text: "Linkedin",
+                  href: "https://www.linkedin.com/in/sanket-pathare-740703245/",
+                },
+                {
+                  icon: <FaGithub className="w-5 h-5" />,
+                  text: "Github",
+                  href: "https://github.com/SanketPathare",
+                },
+              ].map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 p-3 rounded-2xl border border-[#E4E4E7] bg-[#FAFAFA] text-[#71717A] hover:text-[#09090B] hover:border-[#09090B] transition-all"
+                >
+                  <span className="text-[#09090B]">{item.icon}</span>
+                  <span className="text-sm font-medium truncate">{item.text}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="pt-6 mt-4 border-t border-[#E4E4E7] flex justify-between items-center">
+            <span className="text-xs font-medium text-[#A1A1AA]">Let's Connect</span>
+            <Link
+              href="/contact"
+              className="w-10 h-10 rounded-full border border-[#E4E4E7] flex items-center justify-center text-[#71717A] hover:text-white hover:bg-[#18181B] hover:border-[#18181B] transition-all"
+              aria-label="Go to Contact"
+            >
+              <FaArrowRight size={14} />
+            </Link>
+          </div>
         </motion.div>
 
         {/* Services Card */}
         <motion.div
-          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
+          className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="mb-2 text-gray-400">SPECIALIZATION</div>
-          <h2 className="mb-4 text-xl font-bold sm:text-2xl">
-            Services Offering
-          </h2>
-          <div className="grid grid-cols-2 gap-4 mb-6 sm:grid-cols-2">
-            {" "}
-            {[
-              {
-                icon: (
-                  <Icon
-                    icon="icon-park-twotone:web-page"
-                    width="48"
-                    height="48"
-                  />
-                ),
-                text: "Web Development",
-              },
-              {
-                icon: (
-                  <Icon icon="icomoon-free:mobile" width="48" height="48" />
-                ),
-                text: "Mobile Development",
-              },
-              {
-                icon: (
-                  <Icon
-                    icon="qlementine-icons:ui-panel-right-16"
-                    width="48"
-                    height="48"
-                  />
-                ),
-                text: "UI/UX Design",
-              },
-              {
-                icon: (
-                  <Icon icon="hugeicons:web-design-02" width="48" height="48" />
-                ),
-                text: "Graphic Design",
-              },
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                className="p-4 border-2 rounded-lg bg-neutral-800/50 border-neutral-700"
-                whileHover={{ scale: 1.05, backgroundColor: "#404040" }}
-              >
-                <h1 className="flex items-center justify-center mb-2 ">
-                  {service.icon}
-                </h1>
-                <h2 className="flex items-center justify-center text-sm text-gray-400 hover:text-white">
-                  {service.text}
-                </h2>
-              </motion.div>
-            ))}
+          <div>
+            <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              SPECIALIZATION
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] mb-6">
+              Services Offering
+            </h2>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                {
+                  icon: <Icon icon="icon-park-twotone:web-page" width="28" height="28" />,
+                  text: "Web Development",
+                },
+                {
+                  icon: <Icon icon="icomoon-free:mobile" width="28" height="28" />,
+                  text: "Mobile Development",
+                },
+                {
+                  icon: <Icon icon="qlementine-icons:ui-panel-right-16" width="28" height="28" />,
+                  text: "UI/UX Design",
+                },
+                {
+                  icon: <Icon icon="hugeicons:web-design-02" width="28" height="28" />,
+                  text: "Graphic Design",
+                },
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-2xl border border-[#E4E4E7] bg-[#FAFAFA] flex flex-col items-center justify-center text-center hover:border-[#09090B] hover:bg-white transition-all group"
+                >
+                  <div className="mb-2 text-[#09090B] group-hover:scale-110 transition-transform">
+                    {service.icon}
+                  </div>
+                  <span className="text-xs font-medium text-[#71717A] group-hover:text-[#09090B] transition-colors">
+                    {service.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="pt-6 mt-4 border-t border-[#E4E4E7] flex justify-between items-center">
+            <span className="text-xs font-medium text-[#A1A1AA]">Expertise</span>
+            <Link
+              href="/about"
+              className="w-10 h-10 rounded-full border border-[#E4E4E7] flex items-center justify-center text-[#71717A] hover:text-white hover:bg-[#18181B] hover:border-[#18181B] transition-all"
+              aria-label="View Services"
+            >
+              <FaArrowRight size={14} />
+            </Link>
           </div>
         </motion.div>
 
         {/* Social Profiles Card */}
         <motion.div
-          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
+          className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="mb-2 text-gray-400">STAY WITH ME</div>
-          <h2 className="mb-4 text-xl font-bold sm:text-2xl">Profiles</h2>
-          <div className="flex items-center justify-center">
-            <motion.div
-              className="flex items-center justify-center w-40 h-40 mb-6 space-x-4 border-t-4  border-b-4 border-neutral-300 rounded-full"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          <div>
+            <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              STAY WITH ME
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] mb-6">
+              Profiles
+            </h2>
+            <div className="flex items-center justify-center py-6">
+              <motion.div
+                className="flex items-center justify-center w-40 h-40 space-x-3 border-2 border-dashed border-[#E4E4E7] rounded-full"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              >
+                {[
+                  {
+                    href: "https://www.linkedin.com/in/sanket-pathare-740703245/",
+                    icon: <FaLinkedin className="w-5 h-5 text-[#09090B]" />,
+                    title: "LinkedIn",
+                  },
+                  {
+                    href: "https://github.com/SanketPathare",
+                    icon: <FaGithub className="w-5 h-5 text-[#09090B]" />,
+                    title: "GitHub",
+                  },
+                  {
+                    href: "mailto:sanketpathare8808@gmail.com",
+                    icon: <MdEmail className="w-5 h-5 text-[#09090B]" />,
+                    title: "Email",
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  >
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-11 h-11 rounded-full border border-[#E4E4E7] bg-white flex items-center justify-center hover:border-[#09090B] hover:shadow-sm transition-all"
+                      title={item.title}
+                    >
+                      {item.icon}
+                    </a>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+          <div className="pt-6 mt-4 border-t border-[#E4E4E7] flex justify-between items-center">
+            <span className="text-xs font-medium text-[#A1A1AA]">Online Presence</span>
+            <Link
+              href="/contact"
+              className="w-10 h-10 rounded-full border border-[#E4E4E7] flex items-center justify-center text-[#71717A] hover:text-white hover:bg-[#18181B] hover:border-[#18181B] transition-all"
+              aria-label="Go to Profiles"
             >
-              {[
-                {
-                  icon: (
-                    <motion.div
-                      animate={{ rotate: -360 }}
-                      transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    >
-                      <Link
-                        href="https://www.linkedin.com/in/sanket-pathare-740703245/"
-                        target="_blank"
-                      >
-                        <FaLinkedin className="w-7 h-7" />
-                      </Link>
-                    </motion.div>
-                  ),
-                },
-                {
-                  icon: (
-                    <motion.div
-                      animate={{ rotate: -360 }}
-                      transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    >
-                      <Link
-                        href="https://github.com/SanketPathare"
-                        target="_blank"
-                      >
-                        <FaGithub className="w-7 h-7" />
-                      </Link>
-                    </motion.div>
-                  ),
-                },
-                {
-                  icon: (
-                    <motion.div
-                      animate={{ rotate: -360 }}
-                      transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    >
-                      <Link
-                        href="mailto:sanketpathare8808@gmail.com"
-                        target="_blank"
-                      >
-                        <MdEmail className="w-7 h-7" />
-                      </Link>
-                    </motion.div>
-                  ),
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="p-4 bg-neutral-700 rounded-full hover:bg-neutral-600"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {item.icon}
-                </motion.div>
-              ))}
-            </motion.div>
+              <FaArrowRight size={14} />
+            </Link>
           </div>
         </motion.div>
       </div>
 
-      {/* Stats Section */}
-      <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 ">
+      {/* Stats and Work Together Section */}
+      <div className="grid grid-cols-1 gap-6 mt-6 lg:grid-cols-2">
+        {/* Stats Card */}
         <motion.div
-          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
+          className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 flex items-center hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="grid grid-cols-3 gap-4 sm:grid-cols-3">
-            {" "}
-            {/* Adjust grid for smaller screens */}
+          <div className="grid grid-cols-3 gap-4 w-full divide-x divide-[#E4E4E7]">
             {[
               {
-                number: <NumberTicker value={3} className="text-white" />,
+                number: <NumberTicker value={3} className="text-[#09090B]" />,
                 text: "YEARS\nEXPERIENCE",
               },
               {
-                number: <NumberTicker value={20} className="text-white" />,
+                number: <NumberTicker value={20} className="text-[#09090B]" />,
                 text: "CLIENTS\nWORLDWIDE",
               },
               {
-                number: <NumberTicker value={90} className="text-white" />,
+                number: <NumberTicker value={90} className="text-[#09090B]" />,
                 text: "TOTAL\nPROJECTS",
               },
             ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-              >
-                <div className="mb-2 text-3xl font-bold sm:text-4xl">
-                  +{stat.number}
+              <div key={index} className={index > 0 ? "pl-4 sm:pl-6" : ""}>
+                <div className="text-3xl sm:text-4xl font-bold tracking-tight text-[#09090B] mb-2 flex items-baseline">
+                  +<span>{stat.number}</span>
                 </div>
-                <div className="text-xs text-gray-400 whitespace-pre-line sm:text-sm">
+                <div className="text-xs sm:text-sm font-medium text-[#71717A] whitespace-pre-line tracking-wider uppercase">
                   {stat.text}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </motion.div>
-        {/* work together */}
+
+        {/* Work Together Card */}
         <motion.div
-          className="p-4 border border-black bg-neutral-900 rounded-2xl sm:p-6 ring-2 ring-neutral-700"
+          className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 flex items-center justify-between hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="flex items-center justify-between">
-            <h2 className="mb-2 text-3xl font-bold sm:text-4xl">
-              Let&apos;s
-              <br />
-              work <span className="text-gray-500">together</span>.
+          <div>
+            <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              START A PROJECT
+            </div>
+            <h2 className="headline-lg tracking-tight text-[#09090B]">
+              Let&apos;s <span className="text-[#71717A]">work together.</span>
             </h2>
-            <motion.button
-              className="text-gray-400 hover:text-white"
-              whileHover={{ scale: 1.1, rotate: 90 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Link href={"/contact"}>
-                <FaCircleArrowRight size={30} />
-              </Link>
-            </motion.button>
           </div>
+          <Link
+            href="/contact"
+            className="w-14 h-14 rounded-full border border-[#E4E4E7] bg-white flex items-center justify-center text-[#71717A] hover:text-white hover:bg-[#18181B] hover:border-[#18181B] transition-all shadow-sm flex-shrink-0 ml-4"
+            aria-label="Let's work together"
+          >
+            <FaArrowRight size={20} />
+          </Link>
         </motion.div>
       </div>
     </motion.div>
