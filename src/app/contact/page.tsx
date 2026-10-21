@@ -46,11 +46,11 @@ export default function Contact() {
       <motion.div variants={containerVariants} className="w-full">
         {/* Header */}
         <div className="mb-10 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-[#E4E4E7] bg-white text-xs font-semibold tracking-widest uppercase text-[#71717A]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#121215] text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA]">
             GET IN TOUCH
           </div>
-          <h1 className="headline-lg tracking-tight text-[#09090B]">
-            LET&apos;S <span className="text-[#71717A]">CONNECT</span>
+          <h1 className="headline-lg tracking-tight text-[#09090B] dark:text-[#FAFAFA]">
+            LET&apos;S <span className="text-[#71717A] dark:text-[#A1A1AA]">CONNECT</span>
           </h1>
         </div>
 

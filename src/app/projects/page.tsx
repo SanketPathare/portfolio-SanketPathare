@@ -155,18 +155,18 @@ export default function Projects() {
     >
       <div className="w-full">
         {/* Header Section */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-6 border-b border-[#E4E4E7] gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-6 border-b border-[#E4E4E7] dark:border-[#27272A] gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-[#E4E4E7] bg-white text-xs font-semibold tracking-widest uppercase text-[#71717A]">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#121215] text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA]">
               PORTFOLIO ARCHIVE
             </div>
-            <h1 className="headline-lg tracking-tight text-[#09090B]">
-              ALL <span className="text-[#71717A]">PROJECTS</span>
+            <h1 className="headline-lg tracking-tight text-[#09090B] dark:text-[#FAFAFA]">
+              ALL <span className="text-[#71717A] dark:text-[#A1A1AA]">PROJECTS</span>
             </h1>
           </div>
-          <div className="chip-mono text-xs font-semibold text-[#71717A]">
+          <div className="chip-mono text-xs font-semibold text-[#71717A] dark:text-[#A1A1AA]">
             <span>LATEST WORK AND</span>
-            <span className="text-[#09090B] font-bold">FEATURED</span>
+            <span className="text-[#09090B] dark:text-[#FAFAFA] font-bold">FEATURED</span>
           </div>
         </div>
 

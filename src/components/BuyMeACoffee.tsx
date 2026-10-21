@@ -48,71 +48,42 @@ const supporters: Supporter[] = [
   },
 ];
 
+import { FaArrowRight } from "react-icons/fa6";
+
 const BuyMeACoffee: React.FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  };
-
   return (
-    <section className="w-full my-16">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={containerVariants}
-        className="bg-white border border-[#E4E4E7] rounded-3xl p-8 sm:p-14 text-center shadow-[0_2px_12px_rgba(0,0,0,0.02)] max-w-4xl mx-auto"
-      >
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
+      className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)] h-full"
+    >
+      <div>
         {/* Top Tag */}
-        <motion.div variants={itemVariants} className="mb-4">
-          <span className="text-xs font-semibold tracking-widest uppercase text-[#71717A]">
-            SUPPORT
-          </span>
-        </motion.div>
+        <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
+          SUPPORT MY WORK
+        </div>
 
         {/* Heading */}
-        <motion.h2
-          variants={itemVariants}
-          className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#09090B] mb-4"
-        >
-          Enjoying my content?
-        </motion.h2>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-4">
+          Enjoying my <span className="text-[#71717A] dark:text-[#A1A1AA]">content?</span>
+        </h2>
 
         {/* Description */}
-        <motion.p
-          variants={itemVariants}
-          className="text-sm sm:text-base text-[#71717A] max-w-2xl mx-auto leading-relaxed mb-8"
-        >
-          Consider buying me a coffee to support my work! All the money that you donate
-          will help me to create and improve my products so that I can provide you a better
-          experience.
-        </motion.p>
+        <p className="text-sm text-[#71717A] dark:text-[#A1A1AA] leading-relaxed mb-6">
+          Consider buying me a coffee to support my development of open-source tools and creative digital products!
+        </p>
 
         {/* Official Buy Me A Coffee Button */}
-        <motion.div variants={itemVariants} className="flex justify-center mb-12">
+        <div className="flex justify-start sm:justify-center py-2">
           <a
             href="https://buymeacoffee.com/sanketpathare"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-6 py-2.5 bg-[#FFDD00] text-black rounded-xl shadow-sm hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all group"
-            style={{ minWidth: "216px", height: "56px" }}
+            style={{ minWidth: "216px", height: "54px" }}
           >
             {/* Official BMC Coffee Icon */}
             <svg
@@ -133,15 +104,31 @@ const BuyMeACoffee: React.FC = () => {
 
             {/* Cookie Script Text */}
             <span
-              className="text-[28px] text-black leading-none pt-1"
+              className="text-[26px] text-black leading-none pt-1"
               style={{ fontFamily: "'Cookie', cursive" }}
             >
               Buy me a coffee
             </span>
           </a>
-        </motion.div>
-      </motion.div>
-    </section>
+        </div>
+      </div>
+
+      {/* Card Footer */}
+      <div className="pt-6 mt-4 border-t border-[#E4E4E7] dark:border-[#27272A] flex justify-between items-center">
+        <span className="text-xs font-medium text-[#A1A1AA] dark:text-[#71717A] truncate">
+          buymeacoffee.com/sanketpathare
+        </span>
+        <a
+          href="https://buymeacoffee.com/sanketpathare"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-10 h-10 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#18181B] flex items-center justify-center text-[#71717A] dark:text-[#A1A1AA] hover:text-white dark:hover:text-[#09090B] hover:bg-[#18181B] dark:hover:bg-[#FAFAFA] hover:border-[#18181B] dark:hover:border-[#FAFAFA] transition-all flex-shrink-0 ml-3"
+          aria-label="Buy me a coffee"
+        >
+          <FaArrowRight size={14} />
+        </a>
+      </div>
+    </motion.div>
   );
 };
 

@@ -111,17 +111,17 @@ const Page = () => {
   }) => (
     <motion.div variants={itemVariants} className="relative pl-6 pb-8 last:pb-2">
       {/* Timeline line and dot */}
-      <div className="absolute left-0 top-2 bottom-0 w-px bg-[#E4E4E7]" />
-      <div className="absolute -left-[5px] top-2 w-[11px] h-[11px] rounded-full bg-[#18181B] ring-4 ring-white" />
+      <div className="absolute left-0 top-2 bottom-0 w-px bg-[#E4E4E7] dark:bg-[#27272A]" />
+      <div className="absolute -left-[5px] top-2 w-[11px] h-[11px] rounded-full bg-[#18181B] dark:bg-[#FAFAFA] ring-4 ring-white dark:ring-[#121215]" />
 
-      <div className="flex flex-col sm:flex-row sm:justify-between text-xs font-semibold tracking-wider uppercase text-[#71717A] mb-1">
+      <div className="flex flex-col sm:flex-row sm:justify-between text-xs font-semibold tracking-wider uppercase text-[#71717A] dark:text-[#A1A1AA] mb-1">
         <span>
           {startDate} - {endDate}
         </span>
-        <span className="text-[#09090B] font-medium">{title}</span>
+        <span className="text-[#09090B] dark:text-[#FAFAFA] font-medium">{title}</span>
       </div>
-      <h3 className="font-bold text-lg text-[#09090B]">{company}</h3>
-      <p className="text-sm text-[#71717A] mt-2 whitespace-pre-line leading-relaxed">
+      <h3 className="font-bold text-lg text-[#09090B] dark:text-[#FAFAFA]">{company}</h3>
+      <p className="text-sm text-[#71717A] dark:text-[#A1A1AA] mt-2 whitespace-pre-line leading-relaxed">
         {description}
       </p>
     </motion.div>
@@ -136,11 +136,11 @@ const Page = () => {
     >
       <div className="w-full">
         <motion.div variants={itemVariants} className="mb-10 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-[#E4E4E7] bg-white text-xs font-semibold tracking-widest uppercase text-[#71717A]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#121215] text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA]">
             PROFILE OVERVIEW
           </div>
-          <h1 className="headline-lg tracking-tight text-[#09090B]">
-            SELF-<span className="text-[#71717A]">SUMMARY</span>
+          <h1 className="headline-lg tracking-tight text-[#09090B] dark:text-[#FAFAFA]">
+            SELF-<span className="text-[#71717A] dark:text-[#A1A1AA]">SUMMARY</span>
           </h1>
         </motion.div>
 
@@ -149,16 +149,16 @@ const Page = () => {
           <div className="space-y-8">
             {/* Get To Know Me */}
             <motion.div
-              className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
+              className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
               variants={itemVariants}
             >
-              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
                 BACKGROUND
               </div>
-              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] mb-4">
+              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-4">
                 Get To Know Me
               </h2>
-              <p className="text-base leading-relaxed text-[#71717A]">
+              <p className="text-base leading-relaxed text-[#71717A] dark:text-[#A1A1AA]">
                 Hi, I&apos;m Sanket Pathare, a passionate Full-stack developer
                 based in Pune, India. Currently pursuing my BTech in
                 Computer Science Engineering, I combine academic
@@ -176,13 +176,13 @@ const Page = () => {
 
             {/* Professional Experience */}
             <motion.div
-              className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
+              className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
               variants={itemVariants}
             >
-              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
                 CAREER HISTORY
               </div>
-              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] mb-6">
+              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-6">
                 Professional Experience
               </h2>
               <div className="space-y-2">
@@ -206,20 +206,20 @@ const Page = () => {
 
             {/* Soft Skills */}
             <motion.div
-              className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
+              className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
               variants={itemVariants}
             >
-              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
                 COLLABORATION & MINDSET
               </div>
-              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] mb-6">
+              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-6">
                 Soft Skills
               </h2>
               <div className="flex flex-wrap gap-2.5">
                 {softSkills.map((skill) => (
                   <motion.div
                     key={skill}
-                    className="chip-mono text-xs sm:text-sm py-2 px-4 bg-[#FAFAFA] hover:bg-white hover:border-[#09090B] transition-colors"
+                    className="chip-mono text-xs sm:text-sm py-2 px-4 bg-[#FAFAFA] dark:bg-[#18181B] hover:bg-white dark:hover:bg-[#202024] hover:border-[#09090B] dark:hover:border-[#FAFAFA] transition-colors"
                     variants={itemVariants}
                   >
                     {skill}
@@ -233,30 +233,30 @@ const Page = () => {
           <div className="space-y-8">
             {/* Services */}
             <motion.div
-              className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
+              className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
               variants={itemVariants}
             >
-              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
                 CAPABILITIES
               </div>
-              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] mb-6">
+              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-6">
                 Services
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {services.map((service) => (
                   <motion.div
                     key={service.title}
-                    className="p-5 border border-[#E4E4E7] bg-[#FAFAFA] rounded-2xl hover:bg-white hover:border-[#09090B] transition-all group"
+                    className="p-5 border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] rounded-2xl hover:bg-white dark:hover:bg-[#202024] hover:border-[#09090B] dark:hover:border-[#FAFAFA] transition-all group"
                     variants={itemVariants}
                     whileHover={{ y: -2 }}
                   >
-                    <div className="w-11 h-11 border border-[#E4E4E7] bg-white rounded-full flex items-center justify-center mb-4 text-[#09090B] group-hover:border-[#09090B] transition-colors">
+                    <div className="w-11 h-11 border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#121215] rounded-full flex items-center justify-center mb-4 text-[#09090B] dark:text-[#FAFAFA] group-hover:border-[#09090B] dark:group-hover:border-[#FAFAFA] transition-colors">
                       <service.Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-base font-bold text-[#09090B] mb-1">
+                    <h3 className="text-base font-bold text-[#09090B] dark:text-[#FAFAFA] mb-1">
                       {service.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#71717A] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#71717A] dark:text-[#A1A1AA] leading-relaxed">
                       {service.description}
                     </p>
                   </motion.div>
@@ -266,34 +266,34 @@ const Page = () => {
 
             {/* Technical Skills */}
             <motion.div
-              className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
+              className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
               variants={itemVariants}
             >
-              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] mb-2">
+              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
                 TECH STACK & TOOLS
               </div>
-              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] mb-6">
+              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-6">
                 Technical Skills
               </h2>
               <div className="space-y-6">
                 {technicalSkills.map((skill) => (
                   <motion.div key={skill.name} variants={itemVariants}>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-semibold text-[#09090B]">
+                      <span className="text-sm font-semibold text-[#09090B] dark:text-[#FAFAFA]">
                         {skill.name}
                       </span>
-                      <span className="text-xs font-mono font-medium text-[#71717A]">
+                      <span className="text-xs font-mono font-medium text-[#71717A] dark:text-[#A1A1AA]">
                         {skill.percentage}%
                       </span>
                     </div>
-                    <div className="h-2 bg-[#F4F4F5] rounded-full overflow-hidden mb-2">
+                    <div className="h-2 bg-[#F4F4F5] dark:bg-[#27272A] rounded-full overflow-hidden mb-2">
                       <motion.div
-                        className="h-full bg-[#18181B] rounded-full"
+                        className="h-full bg-[#18181B] dark:bg-[#FAFAFA] rounded-full"
                         custom={skill.percentage}
                         variants={skillBarVariants}
                       />
                     </div>
-                    <p className="text-xs text-[#71717A]">{skill.tools}</p>
+                    <p className="text-xs text-[#71717A] dark:text-[#A1A1AA]">{skill.tools}</p>
                   </motion.div>
                 ))}
               </div>

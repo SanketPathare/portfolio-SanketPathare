@@ -87,18 +87,18 @@ const ContactForm = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="bg-white border border-[#E4E4E7] rounded-3xl p-6 sm:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
+      className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-6 sm:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
     >
       <div>
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-4 rounded-full border border-[#E4E4E7] bg-[#FAFAFA] text-xs font-semibold tracking-widest uppercase text-[#71717A]">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-4 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA]">
           SEND A MESSAGE
         </div>
 
         <motion.h2
           variants={itemVariants}
-          className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] mb-8"
+          className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-8"
         >
-          Let&apos;s Work <span className="text-[#71717A]">Together.</span>
+          Let&apos;s Work <span className="text-[#71717A] dark:text-[#A1A1AA]">Together.</span>
         </motion.h2>
 
         <motion.form
@@ -119,7 +119,7 @@ const ContactForm = () => {
               type="text"
               name="name"
               placeholder="Your Name *"
-              className="w-full px-5 py-3.5 text-sm sm:text-base text-[#09090B] bg-white border border-[#E4E4E7] rounded-full focus:border-[#09090B] focus:ring-1 focus:ring-[#09090B] focus:outline-none transition-all placeholder:text-[#A1A1AA]"
+              className="w-full px-5 py-3.5 text-sm sm:text-base text-[#09090B] dark:text-[#FAFAFA] bg-white dark:bg-[#18181B] border border-[#E4E4E7] dark:border-[#27272A] rounded-full focus:border-[#09090B] dark:focus:border-[#FAFAFA] focus:ring-1 focus:ring-[#09090B] dark:focus:ring-[#FAFAFA] focus:outline-none transition-all placeholder:text-[#A1A1AA] dark:placeholder:text-[#71717A]"
               required
               value={formData.name}
               onChange={handleChange}
@@ -131,7 +131,7 @@ const ContactForm = () => {
               type="email"
               name="email"
               placeholder="Your Email *"
-              className="w-full px-5 py-3.5 text-sm sm:text-base text-[#09090B] bg-white border border-[#E4E4E7] rounded-full focus:border-[#09090B] focus:ring-1 focus:ring-[#09090B] focus:outline-none transition-all placeholder:text-[#A1A1AA]"
+              className="w-full px-5 py-3.5 text-sm sm:text-base text-[#09090B] dark:text-[#FAFAFA] bg-white dark:bg-[#18181B] border border-[#E4E4E7] dark:border-[#27272A] rounded-full focus:border-[#09090B] dark:focus:border-[#FAFAFA] focus:ring-1 focus:ring-[#09090B] dark:focus:ring-[#FAFAFA] focus:outline-none transition-all placeholder:text-[#A1A1AA] dark:placeholder:text-[#71717A]"
               required
               value={formData.email}
               onChange={handleChange}
@@ -143,7 +143,7 @@ const ContactForm = () => {
               name="message"
               placeholder="Your Message *"
               rows={5}
-              className="w-full p-5 text-sm sm:text-base text-[#09090B] bg-white border border-[#E4E4E7] rounded-3xl focus:border-[#09090B] focus:ring-1 focus:ring-[#09090B] focus:outline-none transition-all placeholder:text-[#A1A1AA] resize-none"
+              className="w-full p-5 text-sm sm:text-base text-[#09090B] dark:text-[#FAFAFA] bg-white dark:bg-[#18181B] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl focus:border-[#09090B] dark:focus:border-[#FAFAFA] focus:ring-1 focus:ring-[#09090B] dark:focus:ring-[#FAFAFA] focus:outline-none transition-all placeholder:text-[#A1A1AA] dark:placeholder:text-[#71717A] resize-none"
               required
               value={formData.message}
               onChange={handleChange}
@@ -154,7 +154,7 @@ const ContactForm = () => {
             variants={itemVariants}
             type="submit"
             disabled={isSubmitting}
-            className="w-full h-[45px] text-sm font-medium text-white bg-[#18181B] rounded-full hover:bg-[#27272A] disabled:opacity-60 transition-all shadow-sm flex items-center justify-center cursor-pointer"
+            className="w-full h-[45px] text-sm font-medium text-white dark:text-[#09090B] bg-[#18181B] dark:bg-[#FAFAFA] rounded-full hover:bg-[#27272A] dark:hover:bg-[#E4E4E7] disabled:opacity-60 transition-all shadow-sm flex items-center justify-center cursor-pointer"
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </motion.button>

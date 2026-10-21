@@ -38,7 +38,7 @@ const ProjectSlidershow = () => {
   return (
     <div className="relative flex items-center justify-center w-full max-w-2xl p-2 mx-auto overflow-hidden">
       {/* Image container */}
-      <div className="relative h-[210px] w-full max-w-[380px] border border-[#E4E4E7] rounded-2xl overflow-hidden bg-[#FAFAFA] shadow-sm">
+      <div className="relative h-[210px] w-full max-w-[380px] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl overflow-hidden bg-[#FAFAFA] dark:bg-[#18181B] shadow-sm">
         {images.map((image, index) => (
           <div
             key={image.id}

@@ -19,11 +19,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <Link href={`/projects/${slug}`} className="block group">
       <motion.div
-        className="bg-white border border-[#E4E4E7] rounded-3xl p-4 sm:p-5 flex flex-col justify-between hover:border-[#09090B] hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300"
+        className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-4 sm:p-5 flex flex-col justify-between hover:border-[#09090B] dark:hover:border-[#FAFAFA] hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300"
         whileHover={{ y: -4 }}
         transition={{ duration: 0.2 }}
       >
-        <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden border border-[#E4E4E7] bg-[#FAFAFA] mb-4">
+        <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] mb-4">
           <Image
             src={image}
             alt={title}
@@ -34,14 +34,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         <div className="px-2 pb-1">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[#71717A] mb-1">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#71717A] dark:text-[#A1A1AA] mb-1">
             {category}
           </p>
           <div className="flex justify-between items-center mt-1">
-            <h3 className="text-base sm:text-lg font-bold text-[#09090B] group-hover:text-[#18181B] transition-colors">
+            <h3 className="text-base sm:text-lg font-bold text-[#09090B] dark:text-[#FAFAFA] group-hover:text-[#18181B] dark:group-hover:text-white transition-colors">
               {title}
             </h3>
-            <span className="w-9 h-9 rounded-full border border-[#E4E4E7] bg-white flex items-center justify-center text-[#71717A] group-hover:text-white group-hover:bg-[#18181B] group-hover:border-[#18181B] transition-all">
+            <span className="w-9 h-9 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#18181B] flex items-center justify-center text-[#71717A] dark:text-[#A1A1AA] group-hover:text-white dark:group-hover:text-[#09090B] group-hover:bg-[#18181B] dark:group-hover:bg-[#FAFAFA] group-hover:border-[#18181B] dark:group-hover:border-[#FAFAFA] transition-all">
               <FaArrowRight size={13} />
             </span>
           </div>
