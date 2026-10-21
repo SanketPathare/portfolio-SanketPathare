@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Principles from "@/components/Principles";
 import TimeClock from "@/components/TimeClock";
 import RadioStation from "@/components/RadioStation";
 import BuyMeACoffee from "@/components/BuyMeACoffee";
@@ -11,6 +12,7 @@ export default function Home() {
         <TimeClock />
         <RadioStation />
       </div>
+      <Principles />
       <div className="pb-12">
         <BuyMeACoffee />
       </div>
