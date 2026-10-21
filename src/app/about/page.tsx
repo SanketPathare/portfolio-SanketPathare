@@ -169,7 +169,7 @@ const Page = () => {
                 Get To Know Me
               </h2>
               <p className="text-base leading-relaxed text-[#71717A] dark:text-[#A1A1AA]">
-                Passionate Full Stack Web Developer with hands-on experience in building modern, scalable web applications using React.js, Next.js, and Node.js. Dedicated to turning complex ideas into real, user-friendly products while continuously improving technical skills. A quick learner and adaptable professional ready to tackle new challenges in dynamic, fast-paced environments based in Pune, India.
+                Passionate Software Developer with hands-on experience in building modern, scalable web applications using React.js, Next.js, and Node.js. Dedicated to turning complex ideas into real, user-friendly products while continuously improving technical skills. A quick learner and adaptable professional ready to tackle new challenges in dynamic, fast-paced environments based in Pune, India.
               </p>
             </motion.div>
 

@@ -62,13 +62,13 @@ const Hero = () => {
       <motion.div variants={cardVariants} className="pt-6 pb-10 text-center sm:text-left">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#121215] text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA]">
           <span className="w-2 h-2 rounded-full bg-[#18181B] dark:bg-[#FAFAFA] animate-ping" />
-          A WEB DEVELOPER
+          A SOFTWARE DEVELOPER
         </div>
         <h1 className="headline-display mb-3">
           Sanket <span className="text-[#71717A] dark:text-[#A1A1AA]">Pathare.</span>
         </h1>
         <p className="body-lg max-w-2xl text-[#71717A] dark:text-[#A1A1AA]">
-          I am a Web Developer from India crafting responsive, high-performance digital experiences and thoughtful web interfaces.
+          I am a Software Developer from India crafting responsive, high-performance digital experiences and scalable web applications.
         </p>
       </motion.div>
 
@@ -92,13 +92,13 @@ const Hero = () => {
               />
             </div>
             <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
-              A WEB DEVELOPER
+              A SOFTWARE DEVELOPER
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-2">
               Sanket <span className="text-[#71717A] dark:text-[#A1A1AA]">Pathare.</span>
             </h2>
             <p className="text-sm sm:text-base text-[#71717A] dark:text-[#A1A1AA] leading-relaxed">
-              I am a Web Developer from India.
+              I am a Software Developer from India.
             </p>
           </div>
           <div className="pt-6 mt-4 border-t border-[#E4E4E7] dark:border-[#27272A] flex justify-between items-center">

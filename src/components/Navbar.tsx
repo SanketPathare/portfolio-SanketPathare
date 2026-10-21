@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full py-4 backdrop-blur-md border-b border-transparent transition-colors">
-      <nav className="mx-auto flex items-center justify-between px-6 py-3 bg-white dark:bg-[#121215]/90 border border-[#E4E4E7] dark:border-[#27272A] rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-colors">
+      <nav className="mx-auto flex items-center justify-between px-6 py-3 bg-white dark:bg-[#121215]/90 border border-[#E4E4E7] dark:border-[#27272A] rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-colors">
         {/* Brand Lockup */}
         <Link
           href="/"

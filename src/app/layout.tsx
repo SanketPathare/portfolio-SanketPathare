@@ -8,8 +8,8 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
-  title: "Sanket Pathare | Web Developer",
-  description: "Personal Portfolio Website of Sanket Pathare - Web Developer",
+  title: "Sanket Pathare | Software Developer",
+  description: "Personal Portfolio Website of Sanket Pathare - Software Developer",
 };
 
 export default function RootLayout({
