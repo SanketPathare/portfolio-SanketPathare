@@ -41,7 +41,7 @@ const ContactInfo = () => {
     {
       title: "LOCATION",
       icon: MapPin,
-      content: "Pune, India",
+      content: "Kamthe mala, Fursungi, Pune, India",
       href: "#",
     },
   ];
