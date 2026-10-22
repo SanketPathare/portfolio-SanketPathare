@@ -23,13 +23,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         whileHover={{ y: -4 }}
         transition={{ duration: 0.2 }}
       >
-        <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] mb-4">
+        <div className="relative h-48 sm:h-55 w-full rounded-2xl overflow-hidden border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] mb-4">
           <Image
             src={image}
             alt={title}
             fill
-            style={{ objectFit: "cover" }}
-            className="group-hover:scale-105 transition-transform duration-500"
+            style={{ objectFit: "fill" }}
           />
         </div>
 
