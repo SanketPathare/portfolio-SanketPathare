@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight, Home, User, Briefcase, Mail } from "lucide-react";
+import { Menu, X, ArrowUpRight, Home, User, Briefcase, Mail, Layers } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -31,6 +31,7 @@ const Navbar = () => {
   const navLinks = [
     { href: "/", label: "Home", icon: Home },
     { href: "/about", label: "About", icon: User },
+    { href: "/tech-stack", label: "Tech Stack", icon: Layers },
     { href: "/projects", label: "Projects", icon: Briefcase },
     { href: "/contact", label: "Contact", icon: Mail },
   ];
