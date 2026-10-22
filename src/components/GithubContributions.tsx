@@ -232,7 +232,7 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
         return "bg-[#39d353] dark:bg-[#39d353] border-[#39d353]";
       case 0:
       default:
-        return "bg-[#EBEDF0] dark:bg-[#161B22] border-[#E1E4E8] dark:border-[#21262D]";
+        return "bg-[#EBEDF0] dark:bg-[#121215] border-[#E1E4E8] dark:border-[#27272A]";
     }
   };
 
@@ -255,7 +255,7 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
       {/* Top Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E4E4E7] dark:border-[#27272A]">
         <div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-3 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-3 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#121215] text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA]">
             <Radio className="w-3 h-3 text-emerald-500 animate-pulse" />
             <span>LIVE GITHUB CONTRIBUTIONS</span>
           </div>
@@ -328,9 +328,9 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
       {/* Main Heatmap Section & Year Selector */}
       <div className="flex flex-col lg:flex-row gap-6 pt-6 items-start">
         {/* Heatmap Card (Outer container styled like GitHub's dark border box) */}
-        <div className="flex-1 w-full border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#0D1117] rounded-2xl p-4 sm:p-5 relative overflow-hidden">
+        <div className="flex-1 w-full border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] rounded-2xl p-4 sm:p-5 relative overflow-hidden">
           {loading && (
-            <div className="absolute inset-0 bg-white/70 dark:bg-[#0D1117]/70 backdrop-blur-xs flex items-center justify-center z-30">
+            <div className="absolute inset-0 bg-white/70 dark:bg-[#18181B]/80 backdrop-blur-xs flex items-center justify-center z-30">
               <div className="flex items-center gap-2 text-xs font-medium text-[#71717A] dark:text-[#A1A1AA]">
                 <Loader2 className="w-4 h-4 animate-spin text-emerald-500" />
                 <span>Fetching live GitHub data...</span>
@@ -356,7 +356,7 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
             <div className="overflow-x-auto pb-2 scrollbar-thin">
               <div className="min-w-[760px] select-none">
                 {/* Month labels row */}
-                <div className="flex text-[11px] text-[#71717A] dark:text-[#8B949E] font-mono h-5 mb-1 pl-8 relative">
+                <div className="flex text-[11px] text-[#71717A] dark:text-[#A1A1AA] font-mono h-5 mb-1 pl-8 relative">
                   {monthLabels.map((m, idx) => (
                     <span
                       key={idx}
@@ -373,7 +373,7 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
                 {/* Grid: Days of week (Mon, Wed, Fri) + 7 rows x 53 columns */}
                 <div className="flex gap-2 items-start">
                   {/* Day labels column */}
-                  <div className="flex flex-col text-[9px] text-[#71717A] dark:text-[#8B949E] font-mono leading-none pt-[1px] w-6 shrink-0 gap-[3px]">
+                  <div className="flex flex-col text-[9px] text-[#71717A] dark:text-[#A1A1AA] font-mono leading-none pt-[1px] w-6 shrink-0 gap-[3px]">
                     <span className="h-[11px] flex items-center opacity-0">Sun</span>
                     <span className="h-[11px] flex items-center">Mon</span>
                     <span className="h-[11px] flex items-center opacity-0">Tue</span>
@@ -424,19 +424,10 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
                 </div>
 
                 {/* Footer Legend */}
-                <div className="flex flex-wrap items-center justify-between text-xs text-[#71717A] dark:text-[#8B949E] mt-4 pt-3 border-t border-[#E4E4E7] dark:border-[#21262D]">
-                  <a
-                    href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] hover:text-[#09090B] dark:hover:text-[#FAFAFA] underline underline-offset-2 transition-colors"
-                  >
-                    Learn how we count contributions
-                  </a>
-
+                <div className="flex flex-wrap items-center justify-end text-xs text-[#71717A] dark:text-[#A1A1AA] mt-4 pt-3 border-t border-[#E4E4E7] dark:border-[#27272A]">
                   <div className="flex items-center gap-1.5 text-[11px]">
                     <span>Less</span>
-                    <span className="w-[10px] h-[10px] rounded-[2px] bg-[#EBEDF0] dark:bg-[#161B22] border border-[#E1E4E8] dark:border-[#21262D]" />
+                    <span className="w-[10px] h-[10px] rounded-[2px] bg-[#EBEDF0] dark:bg-[#121215] border border-[#E1E4E8] dark:border-[#27272A]" />
                     <span className="w-[10px] h-[10px] rounded-[2px] bg-[#0E4429]" />
                     <span className="w-[10px] h-[10px] rounded-[2px] bg-[#006D32]" />
                     <span className="w-[10px] h-[10px] rounded-[2px] bg-[#26A641]" />
@@ -449,15 +440,15 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
           )}
         </div>
 
-        {/* Year Filter Buttons (Matching GitHub's right-side year selector) */}
+        {/* Year Filter Buttons (Matching portfolio pill aesthetic) */}
         <div className="flex lg:flex-col gap-1.5 shrink-0 w-full lg:w-36 overflow-x-auto pb-1 lg:pb-0">
           <button
             type="button"
             onClick={() => setSelectedYear("last")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-all ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold text-left transition-all ${
               selectedYear === "last"
-                ? "bg-[#0969DA] text-white shadow-xs"
-                : "text-[#71717A] dark:text-[#8B949E] hover:text-[#09090B] dark:hover:text-[#FAFAFA] hover:bg-[#F4F4F5] dark:hover:bg-[#18181B]"
+                ? "bg-[#18181B] dark:bg-[#FAFAFA] text-white dark:text-[#09090B] shadow-xs"
+                : "text-[#71717A] dark:text-[#A1A1AA] hover:text-[#09090B] dark:hover:text-[#FAFAFA] hover:bg-[#F4F4F5] dark:hover:bg-[#202024]"
             }`}
           >
             Last Year
@@ -468,10 +459,10 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
               key={yr}
               type="button"
               onClick={() => setSelectedYear(yr)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-all ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold text-left transition-all ${
                 selectedYear === yr
-                  ? "bg-[#0969DA] text-white shadow-xs"
-                  : "text-[#71717A] dark:text-[#8B949E] hover:text-[#09090B] dark:hover:text-[#FAFAFA] hover:bg-[#F4F4F5] dark:hover:bg-[#18181B]"
+                  ? "bg-[#18181B] dark:bg-[#FAFAFA] text-white dark:text-[#09090B] shadow-xs"
+                  : "text-[#71717A] dark:text-[#A1A1AA] hover:text-[#09090B] dark:hover:text-[#FAFAFA] hover:bg-[#F4F4F5] dark:hover:bg-[#202024]"
               }`}
             >
               {yr}
@@ -489,14 +480,14 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
             top: `${hoveredDay.y - 8}px`,
             transform: "translate(-50%, -100%)",
           }}
-          className="pointer-events-none z-50 px-2.5 py-1.5 rounded-lg bg-[#09090B] dark:bg-[#21262D] text-white text-[11px] font-medium shadow-xl border border-neutral-700 whitespace-nowrap animate-in fade-in zoom-in-95 duration-100"
+          className="pointer-events-none z-50 px-2.5 py-1.5 rounded-xl bg-white dark:bg-[#18181B] text-[#09090B] dark:text-[#FAFAFA] text-[11px] font-medium shadow-xl border border-[#E4E4E7] dark:border-[#27272A] whitespace-nowrap animate-in fade-in zoom-in-95 duration-100"
         >
-          <span className="font-semibold text-emerald-400">
+          <span className="font-semibold text-emerald-500">
             {hoveredDay.count === 0 ? "No" : hoveredDay.count}{" "}
             {hoveredDay.count === 1 ? "contribution" : "contributions"}
           </span>{" "}
           on {formatDate(hoveredDay.date)}
-          <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-4 border-transparent border-t-[#09090B] dark:border-t-[#21262D]" />
+          <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-4 border-transparent border-t-white dark:border-t-[#18181B]" />
         </div>
       )}
     </div>
