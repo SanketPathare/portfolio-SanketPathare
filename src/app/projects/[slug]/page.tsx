@@ -39,12 +39,12 @@ export default async function ProjectPage({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Image Container */}
           <div className="w-full">
-            <div className="relative h-[280px] sm:h-[380px] md:h-[460px] rounded-3xl overflow-hidden border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+            <div className="relative h-[200px] md:h-[300px] lg:h-[300px] rounded-3xl overflow-hidden border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "fill" }}
                 priority
               />
             </div>
