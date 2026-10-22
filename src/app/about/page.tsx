@@ -8,6 +8,7 @@ import {
   Cloud,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import GithubContributions from "@/components/GithubContributions";
 
 const Page = () => {
   const containerVariants = {
@@ -260,51 +261,6 @@ const Page = () => {
                 </div>
               </div>
             </motion.div>
-
-            {/* Soft Skills & Languages */}
-            <motion.div
-              className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
-              variants={itemVariants}
-            >
-              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
-                COMMUNICATION & MINDSET
-              </div>
-              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-6">
-                Skills & Languages
-              </h2>
-              <div className="mb-6">
-                <span className="text-xs font-semibold uppercase text-[#71717A] dark:text-[#A1A1AA] block mb-3">
-                  Professional Mindset
-                </span>
-                <div className="flex flex-wrap gap-2.5">
-                  {softSkills.map((skill) => (
-                    <motion.div
-                      key={skill}
-                      className="chip-mono text-xs sm:text-sm py-2 px-4 bg-[#FAFAFA] dark:bg-[#18181B] hover:bg-white dark:hover:bg-[#202024] hover:border-[#09090B] dark:hover:border-[#FAFAFA] transition-colors"
-                      variants={itemVariants}
-                    >
-                      {skill}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <span className="text-xs font-semibold uppercase text-[#71717A] dark:text-[#A1A1AA] block mb-3">
-                  Languages Spoken
-                </span>
-                <div className="flex flex-wrap gap-2.5">
-                  {languages.map((lang) => (
-                    <span
-                      key={lang}
-                      className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] text-xs font-medium text-[#09090B] dark:text-[#FAFAFA]"
-                    >
-                      {lang}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
           </div>
 
           {/* Right Column */}
@@ -376,8 +332,58 @@ const Page = () => {
                 ))}
               </div>
             </motion.div>
+
+            {/* Soft Skills & Languages */}
+            <motion.div
+              className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-3xl p-6 sm:p-8 hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
+              variants={itemVariants}
+            >
+              <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
+                COMMUNICATION & MINDSET
+              </div>
+              <h2 className="text-2xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-6">
+                Skills & Languages
+              </h2>
+              <div className="mb-6">
+                <span className="text-xs font-semibold uppercase text-[#71717A] dark:text-[#A1A1AA] block mb-3">
+                  Professional Mindset
+                </span>
+                <div className="flex flex-wrap gap-2.5">
+                  {softSkills.map((skill) => (
+                    <motion.div
+                      key={skill}
+                      className="chip-mono text-xs sm:text-sm py-2 px-4 bg-[#FAFAFA] dark:bg-[#18181B] hover:bg-white dark:hover:bg-[#202024] hover:border-[#09090B] dark:hover:border-[#FAFAFA] transition-colors"
+                      variants={itemVariants}
+                    >
+                      {skill}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <span className="text-xs font-semibold uppercase text-[#71717A] dark:text-[#A1A1AA] block mb-3">
+                  Languages Spoken
+                </span>
+                <div className="flex flex-wrap gap-2.5">
+                  {languages.map((lang) => (
+                    <span
+                      key={lang}
+                      className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] text-xs font-medium text-[#09090B] dark:text-[#FAFAFA]"
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
+
+        {/* Live GitHub Contributions */}
+        <motion.div variants={itemVariants} className="mt-8">
+          <GithubContributions username="SanketPathare" />
+        </motion.div>
       </div>
     </motion.main>
   );
