@@ -5,21 +5,22 @@ import { image } from "../../public/image";
 
 const ProjectSlidershow = () => {
   const images = [
-    { id: 1, src: image.TripImg, alt: "Slide 1" },
-    { id: 2, src: image.imageGeneratorImg, alt: "Slide 2" },
-    { id: 3, src: image.CryptoAppImg, alt: "Slide 3" },
-    { id: 4, src: image.GeminiImg, alt: "Slide 4" },
-    { id: 5, src: image.ElectromartImg, alt: "Slide 5" },
-    { id: 6, src: image.AnimeReview, alt: "Slide 6" },
-    { id: 7, src: image.MoviesReview, alt: "Slide 7" },
-    { id: 8, src: image.Fitclub, alt: "Slide 8" },
-    { id: 9, src: image.NewsApp, alt: "Slide 9" },
-    { id: 10, src: image.RecipeApp, alt: "Slide 10" },
-    { id: 11, src: image.Weatherapp, alt: "Slide 11" },
-    { id: 12, src: image.GlobalDoorsKitchen, alt: "Slide 12" },
-    { id: 13, src: image.GameInfo, alt: "Slide 13" },
-    { id: 14, src: image.GithubSearch, alt: "Slide 14" },
-    { id: 15, src: image.CheatSheetAI, alt: "Slide 15" },
+    { id: 1, src: image.LayerNLooms, alt: "LayerNLooms" },
+    { id: 2, src: image.TripImg, alt: "Slide 1" },
+    { id: 3, src: image.imageGeneratorImg, alt: "Slide 2" },
+    { id: 4, src: image.CryptoAppImg, alt: "Slide 3" },
+    { id: 5, src: image.GeminiImg, alt: "Slide 4" },
+    { id: 6, src: image.ElectromartImg, alt: "Slide 5" },
+    { id: 7, src: image.AnimeReview, alt: "Slide 6" },
+    { id: 8, src: image.MoviesReview, alt: "Slide 7" },
+    { id: 9, src: image.Fitclub, alt: "Slide 8" },
+    { id: 10, src: image.NewsApp, alt: "Slide 9" },
+    { id: 11, src: image.RecipeApp, alt: "Slide 10" },
+    { id: 12, src: image.Weatherapp, alt: "Slide 11" },
+    { id: 13, src: image.GlobalDoorsKitchen, alt: "Slide 12" },
+    { id: 14, src: image.GameInfo, alt: "Slide 13" },
+    { id: 15, src: image.GithubSearch, alt: "Slide 14" },
+    { id: 16, src: image.CheatSheetAI, alt: "Slide 15" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

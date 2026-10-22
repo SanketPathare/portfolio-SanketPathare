@@ -13,6 +13,42 @@ export interface ProjectType {
 }
 
 export const projects: { [key: string]: ProjectType } = {
+  layernlooms: {
+    title: "LayerNLooms",
+    category: "AGENCY / FULL STACK",
+    description:
+      "LayerNLooms is a custom software development agency building web applications, mobile apps, AI systems, and cloud infrastructure for startups and enterprises worldwide. Co-founded and engineered with modern, performant web technologies.",
+    GithubLink: "https://github.com/SanketPathare",
+    LiveLink: "https://www.layernlooms.com/",
+    duration: "Production",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Node.js"
+    ],
+    image: image.LayerNLooms,
+  },
+  LayerNLooms: {
+    title: "LayerNLooms",
+    category: "AGENCY / FULL STACK",
+    description:
+      "LayerNLooms is a custom software development agency building web applications, mobile apps, AI systems, and cloud infrastructure for startups and enterprises worldwide. Co-founded and engineered with modern, performant web technologies.",
+    GithubLink: "https://github.com/SanketPathare",
+    LiveLink: "https://www.layernlooms.com/",
+    duration: "Production",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Node.js"
+    ],
+    image: image.LayerNLooms,
+  },
   tripfly: {
     title: "Tripfly",
     category: "WEB DESIGNING",
@@ -189,5 +225,9 @@ export const projects: { [key: string]: ProjectType } = {
 export async function getProjectData(
   slug: string
 ): Promise<ProjectType | undefined> {
-  return projects[slug];
+  return (
+    projects[slug] ||
+    projects[slug.toLowerCase()] ||
+    projects[Object.keys(projects).find((k) => k.toLowerCase() === slug.toLowerCase()) || ""]
+  );
 }

@@ -16,8 +16,11 @@ import GithubSearch from "../public/images/github-search.png";
 import GameInfo from "../public/images/game-info.png";
 
 
+import LayerNLooms from "../public/images/layernlooms.png";
+
 export const image = {
   AvatarImg,
+  LayerNLooms,
   TripImg,
   GeminiImg,
   ElectromartImg,

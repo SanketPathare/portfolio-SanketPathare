@@ -7,6 +7,13 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
+    title: "LayerNLooms",
+    category: "AGENCY / WEBSITE",
+    image: image.LayerNLooms,
+    slug: "layernlooms",
+  },
+  {
+    id: 2,
     title: "Global Doors Kitchen",
     category: "WEBSITE",
     image: image.GlobalDoorsKitchen,
@@ -176,7 +183,7 @@ export default function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project) => (
-            <motion.div key={project.id} variants={cardVariants}>
+            <motion.div key={project.slug} variants={cardVariants}>
               <ProjectCard
                 title={project.title}
                 category={project.category}
