@@ -412,7 +412,7 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({
                                 });
                               }}
                               onMouseLeave={() => setHoveredDay(null)}
-                              className={`w-[11px] h-[11px] rounded-[2px] border transition-all cursor-pointer ${getLevelColor(
+                              className={`w-[11px] h-[11px] rounded-[2px] border transition-transform duration-100 cursor-pointer ${getLevelColor(
                                 day.level
                               )}`}
                             />
