@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-[#FFFFFF] dark:bg-[#09090B] text-[#09090B] dark:text-[#FAFAFA] antialiased selection:bg-[#18181B] selection:text-white dark:selection:bg-white dark:selection:text-[#09090B] flex flex-col min-h-screen transition-colors duration-300`}
+        className={`${inter.className} bg-[#FFFFFF] dark:bg-[#09090B] text-[#09090B] dark:text-[#FAFAFA] antialiased selection:bg-[#18181B] selection:text-white dark:selection:bg-white dark:selection:text-[#09090B] flex flex-col min-h-screen transition-colors duration-300 overflow-x-hidden`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <TransitionEffect />

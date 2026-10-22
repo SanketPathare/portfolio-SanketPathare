@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
 
         {/* Text Navigation Links */}
-        <div className="flex items-center space-x-6 text-sm text-[#71717A] dark:text-[#A1A1AA]">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-[#71717A] dark:text-[#A1A1AA]">
           <Link href="/" className="hover:text-[#09090B] dark:hover:text-[#FAFAFA] transition-colors">
             Home
           </Link>
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="text-xs sm:text-sm text-[#71717A] dark:text-[#A1A1AA]">
+        <div className="text-xs sm:text-sm text-[#71717A] dark:text-[#A1A1AA] text-center sm:text-right">
           {new Date().getFullYear()} © All rights reserved.
         </div>
       </div>

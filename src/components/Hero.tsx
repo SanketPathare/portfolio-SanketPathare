@@ -295,7 +295,7 @@ const Hero = () => {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-6">
               Services Offering
             </h2>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
               {[
                 {
                   icon: <Icon icon="icon-park-twotone:web-page" width="28" height="28" />,
@@ -316,7 +316,7 @@ const Hero = () => {
               ].map((service, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-2xl border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] flex flex-col items-center justify-center text-center hover:border-[#09090B] dark:hover:border-[#FAFAFA] hover:bg-white dark:hover:bg-[#202024] transition-all group"
+                  className="p-3 sm:p-4 rounded-2xl border border-[#E4E4E7] dark:border-[#27272A] bg-[#FAFAFA] dark:bg-[#18181B] flex flex-col items-center justify-center text-center hover:border-[#09090B] dark:hover:border-[#FAFAFA] hover:bg-white dark:hover:bg-[#202024] transition-all group"
                 >
                   <div className="mb-2 text-[#09090B] dark:text-[#FAFAFA] group-hover:scale-110 transition-transform">
                     {service.icon}
@@ -355,7 +355,7 @@ const Hero = () => {
             </h2>
             <div className="flex items-center justify-center py-6">
               <motion.div
-                className="flex items-center justify-center w-40 h-40 space-x-3 border-2 border-dashed border-[#E4E4E7] dark:border-[#27272A] rounded-full"
+                className="flex items-center justify-center w-36 h-36 sm:w-40 sm:h-40 space-x-2 sm:space-x-3 border-2 border-dashed border-[#E4E4E7] dark:border-[#27272A] rounded-full"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
               >
@@ -416,7 +416,7 @@ const Hero = () => {
           variants={cardVariants}
           whileHover={hoverScale}
         >
-          <div className="grid grid-cols-3 gap-4 w-full divide-x divide-[#E4E4E7] dark:divide-[#27272A]">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 w-full divide-x divide-[#E4E4E7] dark:divide-[#27272A]">
             {[
               {
                 number: <NumberTicker value={3} className="text-[#09090B] dark:text-[#FAFAFA]" />,
@@ -431,11 +431,11 @@ const Hero = () => {
                 text: "TOTAL\nPROJECTS",
               },
             ].map((stat, index) => (
-              <div key={index} className={index > 0 ? "pl-4 sm:pl-6" : ""}>
-                <div className="text-3xl sm:text-4xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-2 flex items-baseline">
+              <div key={index} className={index > 0 ? "pl-2 sm:pl-6" : ""}>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-1 sm:mb-2 flex items-baseline">
                   +<span>{stat.number}</span>
                 </div>
-                <div className="text-xs sm:text-sm font-medium text-[#71717A] dark:text-[#A1A1AA] whitespace-pre-line tracking-wider uppercase">
+                <div className="text-[10px] sm:text-xs md:text-sm font-medium text-[#71717A] dark:text-[#A1A1AA] whitespace-pre-line tracking-wider uppercase leading-tight">
                   {stat.text}
                 </div>
               </div>
@@ -453,16 +453,16 @@ const Hero = () => {
             <div className="text-xs font-semibold tracking-widest uppercase text-[#71717A] dark:text-[#A1A1AA] mb-2">
               START A PROJECT
             </div>
-            <h2 className="headline-lg tracking-tight text-[#09090B] dark:text-[#FAFAFA]">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA]">
               Let&apos;s <span className="text-[#71717A] dark:text-[#A1A1AA]">work together.</span>
             </h2>
           </div>
           <Link
             href="/contact"
-            className="w-14 h-14 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#18181B] flex items-center justify-center text-[#71717A] dark:text-[#A1A1AA] hover:text-white dark:hover:text-[#09090B] hover:bg-[#18181B] dark:hover:bg-[#FAFAFA] hover:border-[#18181B] dark:hover:border-[#FAFAFA] transition-all shadow-sm flex-shrink-0 ml-4"
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#E4E4E7] dark:border-[#27272A] bg-white dark:bg-[#18181B] flex items-center justify-center text-[#71717A] dark:text-[#A1A1AA] hover:text-white dark:hover:text-[#09090B] hover:bg-[#18181B] dark:hover:bg-[#FAFAFA] hover:border-[#18181B] dark:hover:border-[#FAFAFA] transition-all shadow-sm flex-shrink-0 ml-3 sm:ml-4"
             aria-label="Let's work together"
           >
-            <FaArrowRight size={20} />
+            <FaArrowRight size={18} className="sm:w-5 sm:h-5" />
           </Link>
         </motion.div>
       </div>

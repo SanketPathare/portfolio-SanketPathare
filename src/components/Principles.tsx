@@ -508,27 +508,27 @@ const Principles: React.FC = () => {
             </div>
 
             {/* Next.js CLI Terminal Micro-Interaction */}
-            <div className="rounded-2xl bg-[#09090B] text-white dark:bg-[#18181B] border border-[#27272A] overflow-hidden p-4 font-mono text-xs flex flex-col justify-between shadow-md">
+            <div className="rounded-2xl bg-[#09090B] text-white dark:bg-[#18181B] border border-[#27272A] overflow-hidden p-3.5 sm:p-4 font-mono text-[11px] sm:text-xs flex flex-col justify-between shadow-md">
               <div className="flex items-center justify-between border-b border-neutral-800 pb-2 mb-2.5">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
                 </div>
-                <span className="text-[11px] text-neutral-400">clean_arch.ts</span>
+                <span className="text-[10px] sm:text-[11px] text-neutral-400">clean_arch.ts</span>
               </div>
               <div className="space-y-1.5 py-1">
-                <div className="flex items-center gap-2 text-emerald-400">
-                  <span className="text-neutral-500">&gt;</span>
-                  <span>next build --turbo</span>
+                <div className="flex items-center gap-2 text-emerald-400 truncate">
+                  <span className="text-neutral-500 flex-shrink-0">&gt;</span>
+                  <span className="truncate">next build --turbo</span>
                 </div>
-                <div className="flex items-center gap-2 text-neutral-300">
-                  <span className="text-emerald-500">✓</span>
-                  <span>Compiled successfully in 184ms</span>
+                <div className="flex items-center gap-2 text-neutral-300 truncate">
+                  <span className="text-emerald-500 flex-shrink-0">✓</span>
+                  <span className="truncate">Compiled successfully in 184ms</span>
                 </div>
-                <div className="flex items-center gap-2 text-neutral-400 text-[11px]">
-                  <span className="text-blue-400">λ</span>
-                  <span>Serverless edge functions active</span>
+                <div className="flex items-center gap-2 text-neutral-400 text-[10px] sm:text-[11px] truncate">
+                  <span className="text-blue-400 flex-shrink-0">λ</span>
+                  <span className="truncate">Serverless edge functions active</span>
                 </div>
               </div>
               <div className="flex justify-between items-center text-[10px] text-neutral-500 border-t border-neutral-800/80 pt-2 mt-2">

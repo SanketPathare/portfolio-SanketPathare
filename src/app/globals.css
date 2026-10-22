@@ -60,6 +60,12 @@
     box-sizing: border-box;
   }
 
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
   body {
     background-color: #FFFFFF;
     color: #09090B;
@@ -77,12 +83,13 @@
 
 /* Typography styles based on itsvg.in Minimal Monochrome */
 .headline-display {
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(2.25rem, 6.5vw, 6rem);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.04em;
   color: #09090B;
   transition: color 0.2s ease;
+  word-break: break-word;
 }
 .dark .headline-display {
   color: #FAFAFA;

@@ -77,13 +77,13 @@ const BuyMeACoffee: React.FC = () => {
         </p>
 
         {/* Official Buy Me A Coffee Button */}
-        <div className="flex justify-start sm:justify-center py-2">
+        <div className="flex justify-center py-2">
           <a
             href="https://buymeacoffee.com/sanketpathare"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-2.5 bg-[#FFDD00] text-black rounded-xl shadow-sm hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all group"
-            style={{ minWidth: "216px", height: "54px" }}
+            className="inline-flex items-center justify-center gap-3 px-5 sm:px-6 py-2.5 bg-[#FFDD00] text-black rounded-xl shadow-sm hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all group max-w-full"
+            style={{ minWidth: "200px", height: "54px" }}
           >
             {/* Official BMC Coffee Icon */}
             <svg

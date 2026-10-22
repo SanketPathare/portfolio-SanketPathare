@@ -304,18 +304,18 @@ const RadioStation: React.FC = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-1 truncate">
+        <h2 className="text-xl sm:text-3xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] mb-1 truncate">
           {station.name}
         </h2>
-        <p className="text-xs text-[#71717A] dark:text-[#A1A1AA] mb-4">
+        <p className="text-xs text-[#71717A] dark:text-[#A1A1AA] mb-4 truncate">
           {station.genre} • <span className="font-mono">{station.freq}</span> • {station.location}
         </p>
 
         {/* Visualizer & Playing Artwork Box */}
-        <div className="bg-[#FAFAFA] dark:bg-[#18181B] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl p-3.5 sm:p-4 mb-4 flex items-center justify-between gap-3">
+        <div className="bg-[#FAFAFA] dark:bg-[#18181B] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl p-3 sm:p-4 mb-4 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
             <div
-              className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] shadow-sm text-[#09090B] dark:text-[#FAFAFA] flex-shrink-0 ${
+              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] shadow-sm text-[#09090B] dark:text-[#FAFAFA] flex-shrink-0 ${
                 isPlaying ? "animate-[spin_4s_linear_infinite]" : ""
               }`}
             >
@@ -349,7 +349,7 @@ const RadioStation: React.FC = () => {
         </div>
 
         {/* Player Controls & Volume */}
-        <div className="flex items-center justify-between gap-2 pt-1">
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
           {/* Controls */}
           <div className="flex items-center gap-2">
             <button
@@ -418,7 +418,7 @@ const RadioStation: React.FC = () => {
             <button
               key={s.id}
               onClick={() => playStation(idx, true)}
-              className={`px-2.5 py-1 rounded-lg text-[11px] font-medium transition-all ${
+              className={`px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-medium transition-all ${
                 currentIdx === idx
                   ? "bg-[#09090B] text-white dark:bg-[#FAFAFA] dark:text-[#09090B] shadow-xs"
                   : "bg-[#FAFAFA] dark:bg-[#18181B] text-[#71717A] dark:text-[#A1A1AA] border border-[#E4E4E7] dark:border-[#27272A] hover:border-[#D4D4D8] dark:hover:border-[#3F3F46]"

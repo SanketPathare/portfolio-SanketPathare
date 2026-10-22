@@ -86,17 +86,17 @@ const TimeClock: React.FC = () => {
         </h2>
 
         {/* Digital & Analog Display */}
-        <div className="flex flex-row items-center justify-between gap-4 py-2 sm:py-4">
+        <div className="flex flex-row items-center justify-between gap-2 sm:gap-4 py-2 sm:py-4 overflow-hidden">
           {/* Digital Time matching user reference image */}
-          <div className="flex items-center gap-3 sm:gap-4">
-            <span className="text-4xl sm:text-6xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] font-mono tabular-nums leading-none">
+          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+            <span className="text-3xl xs:text-4xl sm:text-6xl font-bold tracking-tight text-[#09090B] dark:text-[#FAFAFA] font-mono tabular-nums leading-none">
               {ist.hoursMinutes}
             </span>
             <div className="flex flex-col text-left leading-tight">
-              <span className="text-base sm:text-lg font-semibold text-[#09090B] dark:text-[#FAFAFA] lowercase">
+              <span className="text-sm sm:text-lg font-semibold text-[#09090B] dark:text-[#FAFAFA] lowercase">
                 {ist.period}
               </span>
-              <span className="text-xs text-[#71717A] dark:text-[#A1A1AA] font-medium whitespace-nowrap mt-0.5">
+              <span className="text-[11px] sm:text-xs text-[#71717A] dark:text-[#A1A1AA] font-medium whitespace-nowrap mt-0.5">
                 {ist.dateStr}
               </span>
             </div>
@@ -106,7 +106,7 @@ const TimeClock: React.FC = () => {
           <div className="flex items-center justify-center flex-shrink-0">
             <svg
               viewBox="0 0 100 100"
-              className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 drop-shadow-md select-none transition-all duration-300"
+              className="w-20 h-20 xs:w-24 xs:h-24 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 drop-shadow-md select-none transition-all duration-300"
             >
               {/* Outer dial */}
               <circle
