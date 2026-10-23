@@ -63,6 +63,9 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+  		fontFamily: {
+  			sans: ['var(--font-space-grotesk)', 'Space Grotesk', 'sans-serif'],
+  		},
   		borderRadius: {
   			xl: '24px',
   			lg: 'var(--radius)',

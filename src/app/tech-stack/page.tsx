@@ -12,7 +12,6 @@ import {
   Wrench,
   Pause,
   Play,
-  Search,
   Filter,
   ChevronRight,
   ArrowRight,
@@ -128,7 +127,6 @@ const RINGS = [
 export default function TechStackPage() {
   const [activeCategory, setActiveCategory] = useState<SkillCategory | "all">("all");
   const [hoveredSkill, setHoveredSkill] = useState<TechSkill | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
   const [isPaused, setIsPaused] = useState(false);
   const [viewMode, setViewMode] = useState<"orbit" | "grid">("orbit");
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -142,15 +140,9 @@ export default function TechStackPage() {
   };
 
   const filteredSkills = useMemo(() => {
-    return SKILLS.filter((skill) => {
-      const matchesCategory = activeCategory === "all" || skill.category === activeCategory;
-      const matchesSearch = searchQuery.trim() === "" ||
-        skill.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        skill.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        skill.useCase.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesCategory && matchesSearch;
-    });
-  }, [activeCategory, searchQuery]);
+    if (activeCategory === "all") return SKILLS;
+    return SKILLS.filter((skill) => skill.category === activeCategory);
+  }, [activeCategory]);
 
   const handleNodeClick = (skill: TechSkill) => {
     setActiveCategory((prev) => (prev === skill.category ? "all" : skill.category));
@@ -453,28 +445,6 @@ export default function TechStackPage() {
         </div>
       </section>
 
-      {/* Search Toolbar */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-2 sm:p-0 bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl shadow-xs hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all">
-          <div className="flex items-center gap-2.5 px-3 py-1.5 sm:py-2 flex-1 min-w-0">
-            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-[#71717A] dark:text-[#A1A1AA] shrink-0" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search technology, framework, database..."
-              className="w-full bg-transparent text-sm sm:text-base text-[#09090B] dark:text-[#FAFAFA] placeholder:text-[#A1A1AA] dark:placeholder:text-[#71717A] focus:outline-none min-w-0"
-            />
-            {searchQuery && (
-              <button type="button" onClick={() => setSearchQuery("")} className="text-xs text-[#71717A] hover:text-[#09090B] dark:hover:text-white px-2 py-0.5 rounded-md hover:bg-[#F4F4F5] dark:hover:bg-[#202024] whitespace-nowrap">Clear</button>
-            )}
-          </div>
-          <div className="text-xs sm:text-sm font-mono text-[#71717A] dark:text-[#A1A1AA] px-3 py-1.5 flex items-center justify-between sm:justify-end gap-2 border-t sm:border-t-0 sm:border-l border-[#E4E4E7] dark:border-[#27272A]">
-            <span>Showing:</span>
-            <span className="font-semibold text-[#09090B] dark:text-[#FAFAFA]">{filteredSkills.length} of {SKILLS.length} Skills</span>
-          </div>
-        </div>
-      </section>
 
       {/* Engineering Philosophy */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
@@ -538,7 +508,7 @@ export default function TechStackPage() {
           {CATEGORIES.map((cat) => {
             const skillsInCat = filteredSkills.filter((s) => s.category === cat.id);
             const CatIcon = cat.Icon;
-            if (skillsInCat.length === 0 && searchQuery) return null;
+            if (skillsInCat.length === 0) return null;
             return (
               <motion.div key={cat.id} whileHover={{ y: -3 }} className="bg-white dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] rounded-[1.5rem] p-5 sm:p-6 flex flex-col justify-between hover:border-[#D4D4D8] dark:hover:border-[#3F3F46] transition-all shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
                 <div>

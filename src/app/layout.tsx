@@ -1,11 +1,14 @@
-import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TransitionEffect from "@/components/TransitionEffect";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
 
 export const metadata = {
   title: "Sanket Pathare | Software Developer",
@@ -27,9 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en" className={spaceGrotesk.variable} suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-[#FFFFFF] dark:bg-[#09090B] text-[#09090B] dark:text-[#FAFAFA] antialiased selection:bg-[#18181B] selection:text-white dark:selection:bg-white dark:selection:text-[#09090B] flex flex-col min-h-screen overflow-x-hidden`}
+        className={`${spaceGrotesk.className} bg-[#FFFFFF] dark:bg-[#09090B] text-[#09090B] dark:text-[#FAFAFA] antialiased selection:bg-[#18181B] selection:text-white dark:selection:bg-white dark:selection:text-[#09090B] flex flex-col min-h-screen overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
