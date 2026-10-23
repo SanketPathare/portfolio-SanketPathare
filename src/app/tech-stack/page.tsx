@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -21,8 +21,6 @@ import {
   ShieldCheck,
   Globe,
   Flame,
-  Menu,
-  X,
 } from "lucide-react";
 import {
   SiTypescript,
@@ -134,7 +132,6 @@ export default function TechStackPage() {
   const [isPaused, setIsPaused] = useState(false);
   const [viewMode, setViewMode] = useState<"orbit" | "grid">("orbit");
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
@@ -155,16 +152,6 @@ export default function TechStackPage() {
     });
   }, [activeCategory, searchQuery]);
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 640 && isMobileMenuOpen) setIsMobileMenuOpen(false);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [isMobileMenuOpen]);
-
   const handleNodeClick = (skill: TechSkill) => {
     setActiveCategory((prev) => (prev === skill.category ? "all" : skill.category));
     setHoveredSkill(null);
@@ -172,25 +159,6 @@ export default function TechStackPage() {
 
   return (
     <main className="w-full text-[#09090B] dark:text-[#FAFAFA] pb-20 pt-6 select-none overflow-x-hidden">
-      {/* Mobile Header Controls */}
-      {isMobile && (
-        <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#09090B]/80 backdrop-blur-md border-b border-[#E4E4E7] dark:border-[#27272A] px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-[#09090B] dark:text-[#FAFAFA] font-bold text-lg">
-            <Code2 className="w-5 h-5" /> SP
-          </Link>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-              className="p-2 rounded-lg hover:bg-[#F4F4F5] dark:hover:bg-[#18181B] transition-colors"
-              aria-label="Menu"
-            >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* Page Header */}
       <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left mb-10 sm:mb-14">
         <motion.div
@@ -330,7 +298,7 @@ export default function TechStackPage() {
             {/* Orbit View */}
             {viewMode === "orbit" && (
               <div className="relative w-full flex items-center justify-center py-6 sm:py-10 min-h-[520px] sm:min-h-[620px] lg:min-h-[700px] overflow-hidden">
-                <div className={`relative shrink-0 ${isMobile ? "w-[340px] h-[340px] scale-[0.55] md:scale-[0.75] lg:scale-100" : "w-[620px] h-[620px] scale-[0.48] xs:scale-[0.58] sm:scale-[0.78] md:scale-[0.92] lg:scale-100"} transition-transform origin-center duration-500`}>
+                <div className="relative shrink-0 w-[340px] h-[340px] sm:w-[620px] sm:h-[620px] scale-[0.55] xs:scale-[0.58] sm:scale-[0.78] md:scale-[0.92] lg:scale-100 transition-transform origin-center duration-500">
                   <div className="absolute inset-0 rounded-full pointer-events-none z-0" style={{
                     background: "conic-gradient(from 0deg, transparent 0deg, transparent 270deg, rgba(255,255,255,0.01) 310deg, rgba(255,255,255,0.05) 360deg)",
                     animation: isPaused ? "none" : "spin 12s linear infinite",
@@ -419,7 +387,7 @@ export default function TechStackPage() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 6, scale: 0.95 }}
                       transition={{ duration: 0.15 }}
-                      className={`absolute ${isMobile ? "bottom-[60px] left-1/2 -translate-x-1/2 z-50 w-[90%]" : "bottom-4 left-1/2 -translate-x-1/2 z-50"} px-3 sm:px-4 py-3 sm:py-3.5 rounded-2xl bg-white/95 dark:bg-[#18181B]/95 border border-[#E4E4E7] dark:border-[#27272A] text-[#09090B] dark:text-[#FAFAFA] shadow-2xl backdrop-blur-md flex items-center gap-3 sm:gap-4 max-w-xs sm:max-w-md w-full`}
+                      className="absolute bottom-[60px] sm:bottom-4 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-full max-w-xs sm:max-w-md px-3 sm:px-4 py-3 sm:py-3.5 rounded-2xl bg-white/95 dark:bg-[#18181B]/95 border border-[#E4E4E7] dark:border-[#27272A] text-[#09090B] dark:text-[#FAFAFA] shadow-2xl backdrop-blur-md flex items-center gap-3 sm:gap-4"
                     >
                       <div className="w-10 h-10 rounded-xl bg-[#FAFAFA] dark:bg-[#121215] border border-[#E4E4E7] dark:border-[#27272A] flex items-center justify-center text-[#09090B] dark:text-[#FAFAFA] shrink-0 shadow-inner">
                         <hoveredSkill.Icon className="w-5 h-5 sm:w-6 sm:h-6" />
